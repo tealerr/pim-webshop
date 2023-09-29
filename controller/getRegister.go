@@ -69,7 +69,7 @@ func connectToMongo() {
 	fmt.Println("Connected to MongoDB!")
 }
 
-// สร้าง table ของ user
+// สร้าง table ของ  user
 func _() {
 	createTableSQL := `
         CREATE TABLE IF NOT EXISTS users (
