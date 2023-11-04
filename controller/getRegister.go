@@ -32,6 +32,8 @@ func main() {
 	db = database
 	defer db.Close()
 
+	connectToMongo()
+
 	r := mux.NewRouter()
 	r.HandleFunc("/api/users", getUsers).Methods("GET")
 	r.HandleFunc("/api/users", createUser).Methods("POST")
@@ -44,13 +46,10 @@ func main() {
 var client *mongo.Client
 
 func connectToMongo() {
-	// Define the MongoDB connection string
-	mongoURI := "mongodb://localhost:27017" // Change this to your MongoDB URI
+	mongoURI := "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.1"
 
-	// Set client options
 	clientOptions := options.Client().ApplyURI(mongoURI)
 
-	// Create a client and connect to MongoDB
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
@@ -67,22 +66,6 @@ func connectToMongo() {
 	}
 
 	fmt.Println("Connected to MongoDB!")
-}
-
-// สร้าง table ของ  user
-func _() {
-	createTableSQL := `
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT,
-            email TEXT,
-            password TEXT
-        );`
-
-	_, err := db.Exec(createTableSQL)
-	if err != nil {
-		log.Fatal(err)
-	}
 }
 
 func getUsers(w http.ResponseWriter, r *http.Request) {

@@ -22,34 +22,30 @@ function showSlides() {
 
 function startSlideshow() {
   showSlides();
-  slideshowTimer = setInterval(showSlides, 3000); // เปลี่ยนรูปทุก 3 วินาที (แก้ไขตามต้องการ)
+  slideshowTimer = setInterval(showSlides, 3000);
 }
 
 function stopSlideshow() {
   clearInterval(slideshowTimer);
 }
 
-// Add click event listeners to dots
 let dots = document.getElementsByClassName("dot");
 for (let i = 0; i < dots.length; i++) {
   dots[i].addEventListener("click", function () {
-    slideIndex = i; // กำหนด slideIndex เพื่อให้ตรงกับรูปที่ถูกคลิก
+    slideIndex = i;
     showSlides();
     stopSlideshow();
   });
 }
 
-// Start the slideshow
 startSlideshow();
 
-// Pause the slideshow when the mouse enters
 document
   .querySelector(".slideshow-container")
   .addEventListener("mouseenter", function () {
     stopSlideshow();
   });
 
-// Resume the slideshow when the mouse leaves
 document
   .querySelector(".slideshow-container")
   .addEventListener("mouseleave", function () {
