@@ -1,4 +1,4 @@
-package main
+package authen
 
 import (
 	"context"
@@ -24,7 +24,7 @@ type User struct {
 	Password string `json:"password"`
 }
 
-func main() {
+func lol() {
 	database, err := sql.Open("mongo", "pimshop.db")
 	if err != nil {
 		log.Fatal(err)
