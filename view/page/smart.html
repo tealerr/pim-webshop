@@ -12,12 +12,17 @@
     <!-- CUSTOM STYLE -->
     <link rel="stylesheet" href="../styles/template-style.css" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
       href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext"
       rel="stylesheet"
       type="text/css"
     />
     <script type="text/javascript" src="../script/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../script/jquery-ui.min.js"></script>
+    <script defer src="../script/cart.js"></script>
   </head>
   <body class="size-1520">
     <!-- HEADER -->
@@ -44,9 +49,12 @@
                 <div class="s-3"><button type="submit">Search</button></div>
               </form>
               <div class="m-12 l-4">
-                <p class="right cart">
-                  <i class="icon-sli-basket"></i> <b>3 items</b> / EUR 199.90
-                </p>
+                <a href="checkout.html?cartCount=0&totalPrice=0.00" id="cart-link" onclick="addToCart()">
+                  <p class="right cart">
+                    <i class="fa fa-shopping-cart" style="font-size:24px""></i>
+                    <b id="cart-count">0 items</b> / THB <span id="total-price">0.00</span>
+                  </p>
+                </a>
               </div>
             </div>
           </div>
@@ -182,32 +190,29 @@
             <!-- Pruducts -->
             <div class="margin2x">
               <div class="s-12 m-12 l-4 xl-3 xxl-3">
-                <a href="/"
-                  ><img class="full-img" src="../image/product/protext.png"
-                /></a>
+                <a href="/">
+                    <img class="full-img" src="../image/product/protext.png"/>
+                </a>
                 <h5>39.00 บาท</h5>
-                <a href="/"
-                  ><h4 class="margin-bottom">
-                    <strong>สบู่โฟมก้อนสมุนไพร โพรเทคส์ ไทย เทอราพี</strong>
-                  </h4></a
-                >
+                <a href="/">
+                    <h4 class="margin-bottom">
+                        <strong>สบู่โฟมก้อนสมุนไพร โพรเทคส์ ไทย เทอราพี</strong>
+                    </h4>
+                </a>
                 <p class="margin-bottom">
-                  สบู่โฟมก้อนสมุนไพร โพรเทคส์ ไทย เทอราพี ส้มแมนดาริน พีช
-                  เหมาะสำหรับผิวหน้าและผิวกาย
-                  ด้วยคุณค่าจากธรรมชาติของวิตามินซีและวิตามินอีที่มีคุณสมบัติเป็นสารแอนตี้
-                  ออกซิแดนท์ สูตรเพื่อผิวดูกระจ่างใส สดชื่น สุขภาพดี
+                    สบู่โฟมก้อนสมุนไพร โพรเทคส์ ไทย เทอราพี ส้มแมนดาริน พีช
+                    เหมาะสำหรับผิวหน้าและผิวกาย
+                    ด้วยคุณค่าจากธรรมชาติของวิตามินซีและวิตามินอีที่มีคุณสมบัติเป็นสารแอนตี้
+                    ออกซิแดนท์ สูตรเพื่อผิวดูกระจ่างใส สดชื่น สุขภาพดี
                 </p>
-                <form class="customform s-12 margin-bottom2x" action="">
+                <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(39.00); return false;">
                   <div>
-                    <button
-                      class="button rounded-btn submit-btn s-12"
-                      type="submit"
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
+                        <button class="button rounded-btn submit-btn s-12" type="submit">
+                            Add to Cart
+                        </button>
+                    </div>
                 </form>
-              </div>
+            </div>
               <div class="s-12 m-12 l-4 xl-3 xxl-3">
                 <a href="/"><img class="full-img" src="img/gallery-2.svg" /></a>
                 <h5>EUR 20.59</h5>
