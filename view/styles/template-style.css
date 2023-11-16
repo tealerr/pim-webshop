@@ -1,7 +1,8 @@
-header form.customform input,header form.customform button {                                                                                                             
+header form.customform input,
+header form.customform button {
   margin-bottom: 0;
 }
-img.logo { 
+img.logo {
   max-width: 170px;
 }
 .icon-sli-basket::before {
@@ -18,12 +19,12 @@ img.logo {
   margin-bottom: 20px;
 }
 footer {
-  background:#fff;
-  padding:3.5rem 0;
+  background: #fff;
+  padding: 3.5rem 0;
 }
 @media screen and (max-width: 768px) {
   .right {
-    float:none;
+    float: none;
   }
   nav {
     padding: 0;
