@@ -87,6 +87,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "prettier": "^3.1.0"
+    "prettier": "3.1.0"
+  },
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
   }
 }

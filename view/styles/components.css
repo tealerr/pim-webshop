@@ -24,11 +24,11 @@ a.tab-label:hover {
   color: black;
   margin-right: 1px;
   padding: 0.625rem 1.25rem;
-  transition: background 0.2s linear 0s;
   -o-transition: background 0.2s linear 0s;
   -ms-transition: background 0.2s linear 0s;
   -moz-transition: background 0.2s linear 0s;
   -webkit-transition: background 0.2s linear 0s;
+  transition: background 0.2s linear 0s;
 }
 
 a.tab-label:hover,
@@ -128,12 +128,11 @@ form.customform button {
   height: 2.7rem;
   padding: 0.625rem;
   cursor: pointer;
-  width: 100%;
-  transition: background 0.2s linear 0s;
   -o-transition: background 0.2s linear 0s;
   -ms-transition: background 0.2s linear 0s;
   -moz-transition: background 0.2s linear 0s;
   -webkit-transition: background 0.2s linear 0s;
+  transition: background 0.2s linear 0s;
 }
 
 /* Tooltip */
@@ -202,11 +201,11 @@ a.button:visited {
   font-size: 0.85rem;
   padding: 0.825rem 1rem;
   text-align: center;
-  transition: all 0.2s linear 0s;
   -o-transition: all 0.2s linear 0s;
   -ms-transition: all 0.2s linear 0s;
   -moz-transition: all 0.2s linear 0s;
   -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 
 .button.rounded-btn {
@@ -243,7 +242,7 @@ a.button.submit-btn,
 a.button.submit-btn:link,
 a.button.submit-btn:active,
 a.button.submit-btn:visited {
-  background: #b4bf04 none repeat scroll 0 0;
+  background: #29a744 none repeat scroll 0 0;
 }
 
 .button.reload-btn,
