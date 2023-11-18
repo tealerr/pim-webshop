@@ -8,7 +8,7 @@
 body {
   background: none repeat scroll 0 0 #eeeeee;
   font-size: 16px;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   color: #444;
 }
 
@@ -104,7 +104,7 @@ img {
 }
 
 .owl-nav div {
-  font-family: 'mfg';
+  font-family: "mfg";
 }
 
 .grid .owl-carousel {
@@ -184,7 +184,7 @@ cite {
 }
 
 cite:before {
-  content: '— ';
+  content: "— ";
 }
 
 dl dt {
@@ -217,7 +217,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 mark {
@@ -288,7 +288,7 @@ nav::after,
 .margin2x::after,
 .grid.full::after {
   clear: both;
-  content: '.';
+  content: ".";
   display: block;
   height: 0;
   line-height: 0;
@@ -298,7 +298,7 @@ nav::after,
 
 .grid.margin::after,
 .grid.margin2x::after {
-  content: '';
+  content: "";
   display: none;
 }
 
@@ -307,7 +307,7 @@ nav::after,
 .nav-text span {
   background-color: #fff;
   border-radius: 3px;
-  content: '';
+  content: "";
   display: block;
   height: 3px;
   margin: 6px auto;
@@ -401,9 +401,9 @@ ul.chevron .submenu > a:after,
 ul.chevron .sub-submenu > a:after,
 ul.chevron .aside-submenu > a:after,
 ul.chevron .aside-sub-submenu > a:after {
-  content: '\f004';
+  content: "\f004";
   display: inline-block;
-  font-family: 'mfg';
+  font-family: "mfg";
   font-size: 0.7rem;
   margin: 0 0.625rem;
 }
@@ -546,13 +546,13 @@ nav.breadcrumb-nav ul li a:hover {
 }
 
 nav.breadcrumb-nav ul li:after {
-  content: '/';
+  content: "/";
   margin: 0 9px;
   color: #c8c7c7;
 }
 
 nav.breadcrumb-nav ul li:last-child:after {
-  content: '';
+  content: "";
 }
 
 .slide-content,
@@ -676,7 +676,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 .nav-icon div {
   background-color: #fff;
   border-radius: 3px;
-  content: '';
+  content: "";
   display: block;
   height: 3px;
   margin: 6px 0;
@@ -3162,8 +3162,8 @@ nav.breadcrumb-nav ul li:last-child:after {
   }
 
   .aside-nav-text:after {
-    content: '\f008';
-    font-family: 'mfg';
+    content: "\f008";
+    font-family: "mfg";
     font-size: 1.1rem;
     margin-left: 0.5rem;
     text-align: right;

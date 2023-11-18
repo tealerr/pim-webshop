@@ -95,7 +95,7 @@ form.customform select {
   width: 100%;
 }
 
-form.customform input[type='file'] {
+form.customform input[type="file"] {
   border: 1px solid #e0e0e0;
   height: auto;
   max-height: 2.7rem;
@@ -104,8 +104,8 @@ form.customform input[type='file'] {
   width: 100%;
 }
 
-form.customform input[type='radio'],
-form.customform input[type='checkbox'] {
+form.customform input[type="radio"],
+form.customform input[type="checkbox"] {
   margin-right: 0.625rem;
   width: auto;
   padding: 0;
@@ -116,7 +116,7 @@ form.customform option {
   padding: 0.625rem;
 }
 
-form.customform select[multiple='multiple'] {
+form.customform select[multiple="multiple"] {
   height: auto;
 }
 
@@ -166,7 +166,7 @@ a .tooltip-content,
   border-top: 7px solid #152732;
   bottom: -5px;
   clear: both;
-  content: '';
+  content: "";
   height: 0;
   left: 50%;
   margin-left: -5px;
@@ -303,8 +303,8 @@ a.button.reload-btn:visited {
 }
 
 .accordion-title::before {
-  content: '\f005';
-  font-family: 'mfg';
+  content: "\f005";
+  font-family: "mfg";
   margin-right: 10px;
   font-size: 12px;
   width: 17px;
@@ -359,7 +359,7 @@ a.button.reload-btn:visited {
 
 .modal-content::after {
   clear: both;
-  content: '.';
+  content: ".";
   display: block;
   height: 0;
   line-height: 0;
@@ -418,7 +418,7 @@ body.modal-active {
 }
 
 .timeline-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 18px;
@@ -442,7 +442,7 @@ body.modal-active {
 
 .timeline-block:after {
   clear: both;
-  content: '.';
+  content: ".";
   display: block;
   height: 0;
   line-height: 0;
@@ -513,7 +513,7 @@ body.modal-active {
 }
 
 .timeline-content:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -526,7 +526,7 @@ body.modal-active {
 }
 
 .timeline-content::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 16px;
   right: 100%;

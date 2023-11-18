@@ -1,25 +1,25 @@
-let cartCount = parseInt(localStorage.getItem('cartCount')) || 0
-let totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0.0
+let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+let totalPrice = parseFloat(localStorage.getItem("totalPrice")) || 0.0;
 
 // Update the HTML with initial values
-document.getElementById('cart-count').innerText = cartCount + ' items'
-document.getElementById('total-price').innerText = totalPrice.toFixed(2)
+document.getElementById("cart-count").innerText = cartCount + " items";
+document.getElementById("total-price").innerText = totalPrice.toFixed(2);
 
 function addToCart(productPrice) {
   // Use a local variable to store the product price
-  const priceToAdd = parseFloat(document.getElementById('product-price').value)
+  const priceToAdd = parseFloat(document.getElementById("product-price").value);
 
   // Add the local variable to the total
-  cartCount++
-  totalPrice += priceToAdd
+  cartCount++;
+  totalPrice += priceToAdd;
 
   // Update HTML with new values
-  document.getElementById('cart-count').innerText = cartCount + ' items'
-  document.getElementById('total-price').innerText = totalPrice.toFixed(2)
+  document.getElementById("cart-count").innerText = cartCount + " items";
+  document.getElementById("total-price").innerText = totalPrice.toFixed(2);
 
   // Store values in localStorage
-  localStorage.setItem('cartCount', cartCount)
-  localStorage.setItem('totalPrice', totalPrice)
+  localStorage.setItem("cartCount", cartCount);
+  localStorage.setItem("totalPrice", totalPrice);
 }
 
 // function addToCart(productPrice) {

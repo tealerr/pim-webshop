@@ -16,7 +16,12 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <a class="navbar-brand" href="index.html">
-        <img src="../image/pimlogo.png" width="20%" height="20%" alt="pim logo" />
+        <img
+          src="../image/pimlogo.png"
+          width="20%"
+          height="20%"
+          alt="pim logo"
+        />
       </a>
       <button
         class="navbar-toggler"
@@ -37,7 +42,12 @@
           </a>
           <a class="nav-item nav-link" href="login.html">Login</a>
           <a class="nav-item nav-link" href="register.html">Sign up</a>
-          <a class="nav-item nav-link" href="https://www.facebook.com/shopforpimsmart" target="blank">Help</a>
+          <a
+            class="nav-item nav-link"
+            href="https://www.facebook.com/shopforpimsmart"
+            target="blank"
+            >Help</a
+          >
         </div>
       </div>
     </nav>
@@ -58,7 +68,9 @@
       <br />
       <br />
 
-      <button type="button" class="btn btn-success" id="registerButton">SIGN UP</button>
+      <button type="button" class="btn btn-success" id="registerButton">
+        SIGN UP
+      </button>
     </form>
 
     <div
@@ -93,21 +105,21 @@
     <script>
       window.fbAsyncInit = function () {
         FB.init({
-          appId: 'YOUR_APP_ID',
+          appId: "YOUR_APP_ID",
           autoLogAppEvents: true,
           xfbml: true,
-          version: 'v12.0',
-        })
-      }
-      ;(function (d, s, id) {
+          version: "v12.0",
+        });
+      };
+      (function (d, s, id) {
         var js,
-          fjs = d.getElementsByTagName(s)[0]
-        if (d.getElementById(id)) return
-        js = d.createElement(s)
-        js.id = id
-        js.src = 'https://connect.facebook.net/en_US/sdk.js'
-        fjs.parentNode.insertBefore(js, fjs)
-      })(document, 'script', 'facebook-jssdk')
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
     </script>
 
     <!-- Google Sign-In -->
@@ -115,10 +127,10 @@
     <script>
       function onSignIn(googleUser) {
         // Handle the signed-in user here (e.g., send user data to your server)
-        var profile = googleUser.getBasicProfile()
-        console.log('ID: ' + profile.getId()) // Do something with the user's ID
-        console.log('Name: ' + profile.getName()) // Do something with the user's name
-        console.log('Email: ' + profile.getEmail()) // Do something with the user's email
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Do something with the user's ID
+        console.log("Name: " + profile.getName()); // Do something with the user's name
+        console.log("Email: " + profile.getEmail()); // Do something with the user's email
       }
     </script>
   </body>
