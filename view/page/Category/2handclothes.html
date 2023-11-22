@@ -17,66 +17,16 @@
         rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../script/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../../script/jquery-ui.min.js"></script>
-    <script defer src="../../script/cart.js"></script>
+    <!-- <script defer src="../../script/cart.js"></script> -->
+    <script src="./product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body class="size-1520">
     <!-- HEADER -->
     <header>
-        <div class="line">
-            <div class="box">
-                <div class="m-12 l-2">
-                    <img class="full-img logo" src="../../image/pimlogo.png" alt="logo">
-                </div>
-                <div class="m-12 l-8 right">
-                    <div class="margin">
-                        <form class="customform m-12 l-8" method="get" action="http://google.com/">
-                            <div class="s-9">
-                                <input type="text" placeholder="Search form" title="Search form" />
-                            </div>
-                            <div class="s-3"><button type="submit">Search</button></div>
-                        </form>
-                        <div class="m-12 l-4">
-                            <a href="../checkout.html?cartCount=0&totalPrice=0.00" id="cart-link" onclick="addToCart()">
-                                <p class="right cart">
-                                    <i class="fa fa-shopping-cart" style="font-size:24px""></i>
-                    <b id=" cart-count">0 items</b> / THB <span id="total-price">0.00</span>
-                                </p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- TOP NAV -->
-        <div class="line">
-            <nav>
-                <div class="top-nav">
-                    <ul class="right">
-                        <li><a href="../homepage.html">หน้าหลัก</a></li>
-                        <li>
-                            <a>หมวดหมู่สินค้า</a>
-                            <ul>
-                                <li><a href="../../page/Category/electricAppliance.html">เครื่องใช้ไฟฟ้า</a></li>
-                                <li><a href="../../page/Category/2handclothes.html">เสื้อผ้ามือสอง</a></li>
-                                <li><a href="../../page/Category/consumerGoods.html">เครื่องอุปโภคบริโภค</a></li>
-                                <li><a href="../../page/Category/giftShop.html">กิ๊บช็อป</a></li>
-                                <li><a href="../../page/Category/bagAndShoes.html">กระเป๋าและรองเท้า</a></li>
-                                <li><a href="../../page/Category/stationery.html">เครื่องเขียน</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a>เกี่ยวกับเรา</a>
-                            <ul>
-                                <li><a>รายละเอียดของร้าน</a></li>
-                                <li><a>ตำแหน่งที่ตั้ง</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="https://www.facebook.com/shopforpimsmart" target="blank">ติดต่อเรา</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        
     </header>
     <!-- ASIDE NAV AND CONTENT -->
     <div class="line">
@@ -118,8 +68,8 @@
                     </nav>
                     <h1 class="margin-bottom">Products</h1>
                     <!-- Pruducts -->
-                    <div class="margin2x">
-                        <div class="s-12 m-12 l-4 xl-3 xxl-3">
+                    <div id="render" class="margin2x">
+                        <!-- <div class="s-12 m-12 l-4 xl-3 xxl-3">
                             <a href="">
                                 <img class="full-img" src="../../image/product//2HandClothes/ชุดเดรสขาวลายดอกไม้.jpg"
                                     alt="ชุดเดรสขาวลายดอกไม้" />
@@ -141,7 +91,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="s-12 m-12 l-4 xl-3 xxl-3">
+                         <div class="s-12 m-12 l-4 xl-3 xxl-3">
                             <a href="">
                                 <img class="full-img" src="../../image/product//2HandClothes/ชุดเดรสชมพูลายดอกไม้.jpg"
                                     alt="ชุดเดรสชมพูลายดอกไม้" />
@@ -299,7 +249,7 @@
                                     </button>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
 
 
                         </form>
@@ -323,6 +273,7 @@
     </footer>
     <script type="text/javascript" src="../../script/responsee.js"></script>
     <script type="text/javascript" src="../../../owl-carousel/owl.carousel.js"></script>
+    <script src="./navbar.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             var owl = $("#header-carousel");
@@ -336,6 +287,40 @@
                 autoplayTimeout: 3000,
             });
         });
+
+        $(document).ready(() => {
+            render();
+        })
+
+        function render() {
+            var html = "";
+            for (let i = 0; i < productMaster.cloth.length; i++) {
+                const element = productMaster.cloth[i];
+                html +=`
+                <div class="s-12 m-12 l-4 xl-3 xxl-3">
+                    <a href="">
+                        <img class="full-img" src="${element.img}"/>
+                    </a>
+                    <h5>${numberWithCommas((element.price).toFixed(2))} บาท</h5>
+                    <a href="/">
+                        <h5 class="margin-bottom">
+                            <strong>${element.name}</strong>
+                        </h5>
+                    </a>
+                    <p class="margin-bottom">
+
+                    </p>
+                    <div class="customform s-12 margin-bottom2x" >
+                        <div>
+                            <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12" >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>`
+            }
+            $("#render").html(html);
+        }
     </script>
 </body>
 
