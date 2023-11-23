@@ -2,13 +2,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="UTF-8" />
-    <title>Checkout</title>
-    <link rel="stylesheet" href="../styles/components.css" />
-    <link rel="stylesheet" href="../styles/icons.css" />
-    <link rel="stylesheet" href="../styles/responsee.css" />
-    <link rel="stylesheet" href="../../owl-carousel/owl.carousel.css" />
-    <link rel="stylesheet" href="../../owl-carousel/owl.theme.css" />
 
     <link
       rel="stylesheet"
@@ -27,23 +20,7 @@
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../styles/template-style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext"
-      rel="stylesheet"
-      type="text/css"
-    />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
   </head>
 
   <body class="p-5">
@@ -68,9 +45,8 @@
         </button>
       </div>
     </nav>
-
     <div class="row">
-      <div class="col-75">
+      <div class="col-50">
         <div class="container">
           <form action="/action_page.php">
             <div class="row">
@@ -105,7 +81,8 @@
                 <input
                   type="text"
                   id="adr"
-                  class="form-control"
+                  cla
+                  ss="form-control"
                   name="address"
                   placeholder="บ้านเลขที่ อาคาร ถนน"
                 />
@@ -152,7 +129,7 @@
           </form>
         </div>
       </div>
-      <div class="col-25">
+      <div class="col-50">
         <div class="payment-container">
           <h4>
             Cart
@@ -219,6 +196,53 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="md_edit"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title" id="exampleModalLabel">แก้ไขสินค้า</h5>
+              <h6 class="modal-title" id="ed_name"></h6>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              id="ed_count"
+              type="number"
+              class="form-control"
+              placeholder="xxxx"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              id="btn_closemd"
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              ยกเลิก
+            </button>
+            <button onclick="saveDraft()" type="button" class="btn btn-primary">
+              บันทึก
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -229,42 +253,125 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
-    <script src="./Category/navbar.js"></script>
 
     <script>
+      var urlx = new URL(window.location.href);
+      const fromx = urlx.searchParams.get("from");
+      var finalCart;
+
       var payment = 0;
       $(document).ready(() => {
-        const finalCart = JSON.parse(localStorage.myCart);
-        var myPrice = 0;
-        for (let i = 0; i < finalCart.length; i++) {
-          const element = finalCart[i];
-          myPrice += element.netAmount;
-        }
-        payment = numberWithCommas(myPrice.toFixed(2));
-        $("#myItems").text(finalCart.length);
-        $("#myPrice").text(payment);
-
-        var html = "";
-        if (finalCart.length > 0) {
+        if (fromx && fromx == "2") {
+          finalCart = JSON.parse(localStorage.myCart2);
+          var myPrice = 0;
           for (let i = 0; i < finalCart.length; i++) {
             const element = finalCart[i];
-            html += `
-            <div class="d-flex justify-content-between">
-                <div>[x${element.count}] ${element.name}</div>
-                <div>${element.netAmount.toFixed(2)} THB</div>
-            </div>`;
+            myPrice += element.netAmount;
           }
-        }
-        $("#renderFinalCart").html(html);
-      });
+          payment = numberWithCommas(myPrice.toFixed(2));
+          $("#myItems").text(finalCart.length);
+          $("#myPrice").text(payment);
 
+          var html = "";
+          if (finalCart.length > 0) {
+            for (let i = 0; i < finalCart.length; i++) {
+              const element = finalCart[i];
+              html += `
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                  <div>[x${element.count}] ${element.name}</div>
+                  <div>${element.netAmount.toFixed(2)} THB</div>
+              </div>
+              <div class="d-flex align-items-center">
+                <button onclick="getInfo(${i})" class="btn btn-warning me-1" data-bs-toggle="modal" data-bs-target="#md_edit">แก้ไข</button>
+                <button onclick="removeInfo(${i})" class="btn btn-danger">ลบ</button>
+              </div>
+            </div>
+              `;
+            }
+          }
+          $("#renderFinalCart").html(html);
+        } else {
+          finalCart = JSON.parse(localStorage.myCart);
+          var myPrice = 0;
+          for (let i = 0; i < finalCart.length; i++) {
+            const element = finalCart[i];
+            myPrice += element.netAmount;
+          }
+          payment = numberWithCommas(myPrice.toFixed(2));
+          $("#myItems").text(finalCart.length);
+          $("#myPrice").text(payment);
+
+          var html = "";
+          if (finalCart.length > 0) {
+            for (let i = 0; i < finalCart.length; i++) {
+              const element = finalCart[i];
+              html += `
+              <div class="d-flex justify-content-between">
+                  <div>[x${element.count}] ${element.name}</div>
+                  <div>${element.netAmount.toFixed(2)} THB</div>
+              </div>`;
+            }
+          }
+          $("#renderFinalCart").html(html);
+        }
+      });
+      function getInfo(i) {
+        const info = finalCart[i];
+        itemsIndex = i;
+        $("#ed_name").text(info.name);
+        $("#ed_count").val(info.count);
+      }
+      function removeInfo(i) {
+        const info = finalCart[i];
+
+        Swal.fire({
+          icon: "warning",
+          title: "ยืนยันการลบ ?",
+          text: info.name,
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: "ยืนยัน",
+          cancelButtonText: "ยกเลิก",
+        }).then((res) => {
+          if (res.isConfirmed) {
+            $("#btn_closemd").click();
+            finalCart.splice(i, 1);
+            console.log(finalCart);
+
+            if (fromx && fromx == "2") {
+              localStorage.setItem("myCart2", JSON.stringify(finalCart));
+            } else {
+              localStorage.setItem("myCart", JSON.stringify(finalCart));
+            }
+            window.location.reload();
+          }
+        });
+      }
+      var itemsIndex = 0;
+      function saveDraft() {
+        $("#ed_count").removeClass("is-invalid");
+        if (parseInt($("#ed_count").val()) <= 0) {
+          $("#ed_count").addClass("is-invalid");
+        } else {
+          var count = parseInt($("#ed_count").val());
+          finalCart[itemsIndex].count = count;
+          finalCart[itemsIndex].netAmount =
+            count * finalCart[itemsIndex].amount;
+          if (fromx && fromx == "2") {
+            localStorage.setItem("myCart2", JSON.stringify(finalCart));
+          } else {
+            localStorage.setItem("myCart", JSON.stringify(finalCart));
+          }
+          window.location.reload();
+        }
+      }
       function numberWithCommas(x) {
         x = x.toString();
         var pattern = /(-?\d+)(\d{3})/;
         while (pattern.test(x)) x = x.replace(pattern, "$1,$2");
         return x;
       }
-
       function readURL(input) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
@@ -278,7 +385,6 @@
       $("#myFile").change(function () {
         readURL(this);
       });
-
       function submit() {
         $("#fname").removeClass("is-invalid");
         $("#email").removeClass("is-invalid");
@@ -343,27 +449,21 @@
                 title: "สำเร็จ",
                 timer: 2000,
               }).then(() => {
-                localStorage.removeItem("myCart");
-                window.location.href = "./Category/electricAppliance.html";
+                if (fromx && fromx == "2") {
+                  localStorage.removeItem("myCart2");
+                  window.location.href = "./souvenir/uniformAccessory.html";
+                } else {
+                  localStorage.removeItem("myCart");
+                  window.location.href = "./Category/electricAppliance.html";
+                }
               });
             }
           });
         }
       }
-
       function goBack() {
         window.history.back();
       }
     </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
