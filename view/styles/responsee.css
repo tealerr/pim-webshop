@@ -358,7 +358,7 @@ nav::after,
 }
 
 .top-nav li ul li a {
-  background: none repeat scroll 0 0 #152732;
+  background: none repeat scroll 0 0 seagreen;
   min-width: 100%;
   padding: 0.625rem;
 }
@@ -397,10 +397,10 @@ ul.chevron .count-number {
   display: none;
 }
 
-ul.chevron .submenu > a:after,
-ul.chevron .sub-submenu > a:after,
-ul.chevron .aside-submenu > a:after,
-ul.chevron .aside-sub-submenu > a:after {
+ul.chevron .submenu>a:after,
+ul.chevron .sub-submenu>a:after,
+ul.chevron .aside-submenu>a:after,
+ul.chevron .aside-sub-submenu>a:after {
   content: "\f004";
   display: inline-block;
   font-family: "mfg";
@@ -412,8 +412,8 @@ ul.chevron .aside-sub-submenu > a:after {
   background: #28a745;
 }
 
-.aside-nav > ul > li.active-item > a:link,
-.aside-nav > ul > li.active-item > a:visited {
+.aside-nav>ul>li.active-item>a:link,
+.aside-nav>ul>li.active-item>a:visited {
   background: #28a745;
   color: #fff;
 }
@@ -424,12 +424,12 @@ ul.chevron .aside-sub-submenu > a:after {
     float: right;
   }
 
-  .top-nav li:hover > ul {
+  .top-nav li:hover>ul {
     display: block;
     z-index: 10;
   }
 
-  .top-nav li:hover > ul ul {
+  .top-nav li:hover>ul ul {
     left: 100%;
     margin: -2.5rem 0;
     width: 100%;
@@ -444,7 +444,7 @@ ul.chevron .aside-sub-submenu > a:after {
 .aside-nav a,
 .aside-nav a:link,
 .aside-nav a:visited,
-.aside-nav li > ul,
+.aside-nav li>ul,
 .top-nav a,
 .top-nav a:link,
 .top-nav a:visited {
@@ -474,11 +474,11 @@ ul.chevron .aside-sub-submenu > a:after {
   padding: 1.25rem;
 }
 
-.aside-nav > ul > li:last-child a {
+.aside-nav>ul>li:last-child a {
   border-bottom: 0 none;
 }
 
-.aside-nav li > ul {
+.aside-nav li>ul {
   height: 0;
   display: block;
   position: relative;
@@ -503,13 +503,13 @@ ul.chevron .aside-sub-submenu > a:after {
 }
 
 .aside-nav li li a:hover,
-.aside-nav li li.active-item > a,
+.aside-nav li li.active-item>a,
 .aside-nav li li.aside-sub-submenu li a:hover {
   color: #28a745;
   background: #28a745;
 }
 
-.aside-nav > ul > li > a:hover {
+.aside-nav>ul>li>a:hover {
   color: #fff;
 }
 
@@ -570,7 +570,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 }
 
 .aside-nav.slide-nav {
-  background: #1c3849;
+  background: #28a745;
   bottom: 0;
   right: 0;
   top: 0;
@@ -582,8 +582,8 @@ nav.breadcrumb-nav ul li:last-child:after {
   z-index: 2;
 }
 
-.aside-nav.slide-nav > ul {
-  background: #1c3849;
+.aside-nav.slide-nav>ul {
+  background: #28a745;
   opacity: 0;
   transition: all 0.2s linear 0s;
   -o-transition: all 0.2s linear 0s;
@@ -607,13 +607,13 @@ nav.breadcrumb-nav ul li:last-child:after {
   color: #fff !important;
 }
 
-.aside-nav.slide-nav li > ul {
+.aside-nav.slide-nav li>ul {
   background: #2b4c61;
   border-left: 0;
   border-right: 0;
 }
 
-.aside-nav.slide-nav li > ul ul {
+.aside-nav.slide-nav li>ul ul {
   background: #456274;
   border-left: 0;
   border-right: 0;
@@ -938,275 +938,275 @@ nav.breadcrumb-nav ul li:last-child:after {
   order: 99999999;
 }
 
-.line .margin > .s-1,
-.line .margin > .s-2,
-.line .margin > .s-five,
-.line .margin > .s-3,
-.line .margin > .s-4,
-.line .margin > .s-5,
-.line .margin > .s-6,
-.line .margin > .s-7,
-.line .margin > .s-8,
-.line .margin > .s-9,
-.line .margin > .s-10,
-.line .margin > .s-11,
-.line .margin > .s-12,
-.line .margin > .m-1,
-.line .margin > .m-2,
-.line .margin > .m-five,
-.line .margin > .m-3,
-.line .margin > .m-4,
-.line .margin > .m-5,
-.line .margin > .m-6,
-.line .margin > .m-7,
-.line .margin > .m-8,
-.line .margin > .m-9,
-.line .margin > .m-10,
-.line .margin > .m-11,
-.line .margin > .m-12,
-.line .margin > .l-1,
-.line .margin > .l-2,
-.line .margin > .l-five,
-.line .margin > .l-3,
-.line .margin > .l-4,
-.line .margin > .l-5,
-.line .margin > .l-6,
-.line .margin > .l-7,
-.line .margin > .l-8,
-.line .margin > .l-9,
-.line .margin > .l-10,
-.line .margin > .l-11,
-.line .margin > .l-12,
-.line .margin > .xl-1,
-.line .margin > .xl-2,
-.line .margin > .xl-five,
-.line .margin > .xl-3,
-.line .margin > .xl-4,
-.line .margin > .xl-5,
-.line .margin > .xl-6,
-.line .margin > .xl-7,
-.line .margin > .xl-8,
-.line .margin > .xl-9,
-.line .margin > .xl-10,
-.line .margin > .xl-11,
-.line .margin > .xl-12,
-.line .margin > .xxl-1,
-.line .margin > .xxl-2,
-.line .margin > .xxl-five,
-.line .margin > .xxl-3,
-.line .margin > .xxl-4,
-.line .margin > .xxl-5,
-.line .margin > .xxl-6,
-.line .margin > .xxl-7,
-.line .margin > .xxl-8,
-.line .margin > .xxl-9,
-.line .margin > .xxl-10,
-.line .margin > .xxl-11,
-.line .margin > .xxl-12 {
+.line .margin>.s-1,
+.line .margin>.s-2,
+.line .margin>.s-five,
+.line .margin>.s-3,
+.line .margin>.s-4,
+.line .margin>.s-5,
+.line .margin>.s-6,
+.line .margin>.s-7,
+.line .margin>.s-8,
+.line .margin>.s-9,
+.line .margin>.s-10,
+.line .margin>.s-11,
+.line .margin>.s-12,
+.line .margin>.m-1,
+.line .margin>.m-2,
+.line .margin>.m-five,
+.line .margin>.m-3,
+.line .margin>.m-4,
+.line .margin>.m-5,
+.line .margin>.m-6,
+.line .margin>.m-7,
+.line .margin>.m-8,
+.line .margin>.m-9,
+.line .margin>.m-10,
+.line .margin>.m-11,
+.line .margin>.m-12,
+.line .margin>.l-1,
+.line .margin>.l-2,
+.line .margin>.l-five,
+.line .margin>.l-3,
+.line .margin>.l-4,
+.line .margin>.l-5,
+.line .margin>.l-6,
+.line .margin>.l-7,
+.line .margin>.l-8,
+.line .margin>.l-9,
+.line .margin>.l-10,
+.line .margin>.l-11,
+.line .margin>.l-12,
+.line .margin>.xl-1,
+.line .margin>.xl-2,
+.line .margin>.xl-five,
+.line .margin>.xl-3,
+.line .margin>.xl-4,
+.line .margin>.xl-5,
+.line .margin>.xl-6,
+.line .margin>.xl-7,
+.line .margin>.xl-8,
+.line .margin>.xl-9,
+.line .margin>.xl-10,
+.line .margin>.xl-11,
+.line .margin>.xl-12,
+.line .margin>.xxl-1,
+.line .margin>.xxl-2,
+.line .margin>.xxl-five,
+.line .margin>.xxl-3,
+.line .margin>.xxl-4,
+.line .margin>.xxl-5,
+.line .margin>.xxl-6,
+.line .margin>.xxl-7,
+.line .margin>.xxl-8,
+.line .margin>.xxl-9,
+.line .margin>.xxl-10,
+.line .margin>.xxl-11,
+.line .margin>.xxl-12 {
   padding: 0 0.625rem;
 }
 
-.line .margin2x > .s-1,
-.line .margin2x > .s-2,
-.line .margin2x > .s-five,
-.line .margin2x > .s-3,
-.line .margin2x > .s-4,
-.line .margin2x > .s-5,
-.line .margin2x > .s-6,
-.line .margin2x > .s-7,
-.line .margin2x > .s-8,
-.line .margin2x > .s-9,
-.line .margin2x > .s-10,
-.line .margin2x > .s-11,
-.line .margin2x > .s-12,
-.line .margin2x > .m-1,
-.line .margin2x > .m-2,
-.line .margin2x > .m-five,
-.line .margin2x > .m-3,
-.line .margin2x > .m-4,
-.line .margin2x > .m-5,
-.line .margin2x > .m-6,
-.line .margin2x > .m-7,
-.line .margin2x > .m-8,
-.line .margin2x > .m-9,
-.line .margin2x > .m-10,
-.line .margin2x > .m-11,
-.line .margin2x > .m-12,
-.line .margin2x > .l-1,
-.line .margin2x > .l-2,
-.line .margin2x > .l-five,
-.line .margin2x > .l-3,
-.line .margin2x > .l-4,
-.line .margin2x > .l-5,
-.line .margin2x > .l-6,
-.line .margin2x > .l-7,
-.line .margin2x > .l-8,
-.line .margin2x > .l-9,
-.line .margin2x > .l-10,
-.line .margin2x > .l-11,
-.line .margin2x > .l-12,
-.line .margin2x > .xl-1,
-.line .margin2x > .xl-2,
-.line .margin2x > .xl-five,
-.line .margin2x > .xl-3,
-.line .margin2x > .xl-4,
-.line .margin2x > .xl-5,
-.line .margin2x > .xl-6,
-.line .margin2x > .xl-7,
-.line .margin2x > .xl-8,
-.line .margin2x > .xl-9,
-.line .margin2x > .xl-10,
-.line .margin2x > .xl-11,
-.line .margin2x > .xl-12,
-.line .margin2x > .xxl-1,
-.line .margin2x > .xxl-2,
-.line .margin2x > .xxl-five,
-.line .margin2x > .xxl-3,
-.line .margin2x > .xxl-4,
-.line .margin2x > .xxl-5,
-.line .margin2x > .xxl-6,
-.line .margin2x > .xxl-7,
-.line .margin2x > .xxl-8,
-.line .margin2x > .xxl-9,
-.line .margin2x > .xxl-10,
-.line .margin2x > .xxl-11,
-.line .margin2x > .xxl-12 {
+.line .margin2x>.s-1,
+.line .margin2x>.s-2,
+.line .margin2x>.s-five,
+.line .margin2x>.s-3,
+.line .margin2x>.s-4,
+.line .margin2x>.s-5,
+.line .margin2x>.s-6,
+.line .margin2x>.s-7,
+.line .margin2x>.s-8,
+.line .margin2x>.s-9,
+.line .margin2x>.s-10,
+.line .margin2x>.s-11,
+.line .margin2x>.s-12,
+.line .margin2x>.m-1,
+.line .margin2x>.m-2,
+.line .margin2x>.m-five,
+.line .margin2x>.m-3,
+.line .margin2x>.m-4,
+.line .margin2x>.m-5,
+.line .margin2x>.m-6,
+.line .margin2x>.m-7,
+.line .margin2x>.m-8,
+.line .margin2x>.m-9,
+.line .margin2x>.m-10,
+.line .margin2x>.m-11,
+.line .margin2x>.m-12,
+.line .margin2x>.l-1,
+.line .margin2x>.l-2,
+.line .margin2x>.l-five,
+.line .margin2x>.l-3,
+.line .margin2x>.l-4,
+.line .margin2x>.l-5,
+.line .margin2x>.l-6,
+.line .margin2x>.l-7,
+.line .margin2x>.l-8,
+.line .margin2x>.l-9,
+.line .margin2x>.l-10,
+.line .margin2x>.l-11,
+.line .margin2x>.l-12,
+.line .margin2x>.xl-1,
+.line .margin2x>.xl-2,
+.line .margin2x>.xl-five,
+.line .margin2x>.xl-3,
+.line .margin2x>.xl-4,
+.line .margin2x>.xl-5,
+.line .margin2x>.xl-6,
+.line .margin2x>.xl-7,
+.line .margin2x>.xl-8,
+.line .margin2x>.xl-9,
+.line .margin2x>.xl-10,
+.line .margin2x>.xl-11,
+.line .margin2x>.xl-12,
+.line .margin2x>.xxl-1,
+.line .margin2x>.xxl-2,
+.line .margin2x>.xxl-five,
+.line .margin2x>.xxl-3,
+.line .margin2x>.xxl-4,
+.line .margin2x>.xxl-5,
+.line .margin2x>.xxl-6,
+.line .margin2x>.xxl-7,
+.line .margin2x>.xxl-8,
+.line .margin2x>.xxl-9,
+.line .margin2x>.xxl-10,
+.line .margin2x>.xxl-11,
+.line .margin2x>.xxl-12 {
   padding: 0 1.25rem;
 }
 
-.line-full-width .margin > .s-1,
-.line-full-width .margin > .s-2,
-.line-full-width .margin > .s-five,
-.line-full-width .margin > .s-3,
-.line-full-width .margin > .s-4,
-.line-full-width .margin > .s-5,
-.line-full-width .margin > .s-6,
-.line-full-width .margin > .s-7,
-.line-full-width .margin > .s-8,
-.line-full-width .margin > .s-9,
-.line-full-width .margin > .s-10,
-.line-full-width .margin > .s-11,
-.line-full-width .margin > .s-12,
-.line-full-width .margin > .m-1,
-.line-full-width .margin > .m-2,
-.line-full-width .margin > .m-five,
-.line-full-width .margin > .m-3,
-.line-full-width .margin > .m-4,
-.line-full-width .margin > .m-5,
-.line-full-width .margin > .m-6,
-.line-full-width .margin > .m-7,
-.line-full-width .margin > .m-8,
-.line-full-width .margin > .m-9,
-.line-full-width .margin > .m-10,
-.line-full-width .margin > .m-11,
-.line-full-width .margin > .m-12,
-.line-full-width .margin > .l-1,
-.line-full-width .margin > .l-2,
-.line-full-width .margin > .l-five,
-.line-full-width .margin > .l-3,
-.line-full-width .margin > .l-4,
-.line-full-width .margin > .l-5,
-.line-full-width .margin > .l-6,
-.line-full-width .margin > .l-7,
-.line-full-width .margin > .l-8,
-.line-full-width .margin > .l-9,
-.line-full-width .margin > .l-10,
-.line-full-width .margin > .l-11,
-.line-full-width .margin > .l-12,
-.line-full-width .margin > .xl-1,
-.line-full-width .margin > .xl-2,
-.line-full-width .margin > .xl-five,
-.line-full-width .margin > .xl-3,
-.line-full-width .margin > .xl-4,
-.line-full-width .margin > .xl-5,
-.line-full-width .margin > .xl-6,
-.line-full-width .margin > .xl-7,
-.line-full-width .margin > .xl-8,
-.line-full-width .margin > .xl-9,
-.line-full-width .margin > .xl-10,
-.line-full-width .margin > .xl-11,
-.line-full-width .margin > .xl-12,
-.line-full-width .margin > .xxl-1,
-.line-full-width .margin > .xxl-2,
-.line-full-width .margin > .xxl-five,
-.line-full-width .margin > .xxl-3,
-.line-full-width .margin > .xxl-4,
-.line-full-width .margin > .xxl-5,
-.line-full-width .margin > .xxl-6,
-.line-full-width .margin > .xxl-7,
-.line-full-width .margin > .xxl-8,
-.line-full-width .margin > .xxl-9,
-.line-full-width .margin > .xxl-10,
-.line-full-width .margin > .xxl-11,
-.line-full-width .margin > .xxl-12 {
+.line-full-width .margin>.s-1,
+.line-full-width .margin>.s-2,
+.line-full-width .margin>.s-five,
+.line-full-width .margin>.s-3,
+.line-full-width .margin>.s-4,
+.line-full-width .margin>.s-5,
+.line-full-width .margin>.s-6,
+.line-full-width .margin>.s-7,
+.line-full-width .margin>.s-8,
+.line-full-width .margin>.s-9,
+.line-full-width .margin>.s-10,
+.line-full-width .margin>.s-11,
+.line-full-width .margin>.s-12,
+.line-full-width .margin>.m-1,
+.line-full-width .margin>.m-2,
+.line-full-width .margin>.m-five,
+.line-full-width .margin>.m-3,
+.line-full-width .margin>.m-4,
+.line-full-width .margin>.m-5,
+.line-full-width .margin>.m-6,
+.line-full-width .margin>.m-7,
+.line-full-width .margin>.m-8,
+.line-full-width .margin>.m-9,
+.line-full-width .margin>.m-10,
+.line-full-width .margin>.m-11,
+.line-full-width .margin>.m-12,
+.line-full-width .margin>.l-1,
+.line-full-width .margin>.l-2,
+.line-full-width .margin>.l-five,
+.line-full-width .margin>.l-3,
+.line-full-width .margin>.l-4,
+.line-full-width .margin>.l-5,
+.line-full-width .margin>.l-6,
+.line-full-width .margin>.l-7,
+.line-full-width .margin>.l-8,
+.line-full-width .margin>.l-9,
+.line-full-width .margin>.l-10,
+.line-full-width .margin>.l-11,
+.line-full-width .margin>.l-12,
+.line-full-width .margin>.xl-1,
+.line-full-width .margin>.xl-2,
+.line-full-width .margin>.xl-five,
+.line-full-width .margin>.xl-3,
+.line-full-width .margin>.xl-4,
+.line-full-width .margin>.xl-5,
+.line-full-width .margin>.xl-6,
+.line-full-width .margin>.xl-7,
+.line-full-width .margin>.xl-8,
+.line-full-width .margin>.xl-9,
+.line-full-width .margin>.xl-10,
+.line-full-width .margin>.xl-11,
+.line-full-width .margin>.xl-12,
+.line-full-width .margin>.xxl-1,
+.line-full-width .margin>.xxl-2,
+.line-full-width .margin>.xxl-five,
+.line-full-width .margin>.xxl-3,
+.line-full-width .margin>.xxl-4,
+.line-full-width .margin>.xxl-5,
+.line-full-width .margin>.xxl-6,
+.line-full-width .margin>.xxl-7,
+.line-full-width .margin>.xxl-8,
+.line-full-width .margin>.xxl-9,
+.line-full-width .margin>.xxl-10,
+.line-full-width .margin>.xxl-11,
+.line-full-width .margin>.xxl-12 {
   padding: 0 0.625rem;
 }
 
-.line-full-width .margin2x > .s-1,
-.line-full-width .margin2x > .s-2,
-.line-full-width .margin2x > .s-five,
-.line-full-width .margin2x > .s-3,
-.line-full-width .margin2x > .s-4,
-.line-full-width .margin2x > .s-5,
-.line-full-width .margin2x > .s-6,
-.line-full-width .margin2x > .s-7,
-.line-full-width .margin2x > .s-8,
-.line-full-width .margin2x > .s-9,
-.line-full-width .margin2x > .s-10,
-.line-full-width .margin2x > .s-11,
-.line-full-width .margin2x > .s-12,
-.line-full-width .margin2x > .m-1,
-.line-full-width .margin2x > .m-2,
-.line-full-width .margin2x > .m-five,
-.line-full-width .margin2x > .m-3,
-.line-full-width .margin2x > .m-4,
-.line-full-width .margin2x > .m-5,
-.line-full-width .margin2x > .m-6,
-.line-full-width .margin2x > .m-7,
-.line-full-width .margin2x > .m-8,
-.line-full-width .margin2x > .m-9,
-.line-full-width .margin2x > .m-10,
-.line-full-width .margin2x > .m-11,
-.line-full-width .margin2x > .m-12,
-.line-full-width .margin2x > .l-1,
-.line-full-width .margin2x > .l-2,
-.line-full-width .margin2x > .l-five,
-.line-full-width .margin2x > .l-3,
-.line-full-width .margin2x > .l-4,
-.line-full-width .margin2x > .l-5,
-.line-full-width .margin2x > .l-6,
-.line-full-width .margin2x > .l-7,
-.line-full-width .margin2x > .l-8,
-.line-full-width .margin2x > .l-9,
-.line-full-width .margin2x > .l-10,
-.line-full-width .margin2x > .l-11,
-.line-full-width .margin2x > .l-12,
-.line-full-width .margin2x > .xl-1,
-.line-full-width .margin2x > .xl-2,
-.line-full-width .margin2x > .xl-five,
-.line-full-width .margin2x > .xl-3,
-.line-full-width .margin2x > .xl-4,
-.line-full-width .margin2x > .xl-5,
-.line-full-width .margin2x > .xl-6,
-.line-full-width .margin2x > .xl-7,
-.line-full-width .margin2x > .xl-8,
-.line-full-width .margin2x > .xl-9,
-.line-full-width .margin2x > .xl-10,
-.line-full-width .margin2x > .xl-11,
-.line-full-width .margin2x > .xl-12,
-.line-full-width .margin2x > .xxl-1,
-.line-full-width .margin2x > .xxl-2,
-.line-full-width .margin2x > .xxl-five,
-.line-full-width .margin2x > .xxl-3,
-.line-full-width .margin2x > .xxl-4,
-.line-full-width .margin2x > .xxl-5,
-.line-full-width .margin2x > .xxl-6,
-.line-full-width .margin2x > .xxl-7,
-.line-full-width .margin2x > .xxl-8,
-.line-full-width .margin2x > .xxl-9,
-.line-full-width .margin2x > .xxl-10,
-.line-full-width .margin2x > .xxl-11,
-.line-full-width .margin2x > .xxl-12 {
+.line-full-width .margin2x>.s-1,
+.line-full-width .margin2x>.s-2,
+.line-full-width .margin2x>.s-five,
+.line-full-width .margin2x>.s-3,
+.line-full-width .margin2x>.s-4,
+.line-full-width .margin2x>.s-5,
+.line-full-width .margin2x>.s-6,
+.line-full-width .margin2x>.s-7,
+.line-full-width .margin2x>.s-8,
+.line-full-width .margin2x>.s-9,
+.line-full-width .margin2x>.s-10,
+.line-full-width .margin2x>.s-11,
+.line-full-width .margin2x>.s-12,
+.line-full-width .margin2x>.m-1,
+.line-full-width .margin2x>.m-2,
+.line-full-width .margin2x>.m-five,
+.line-full-width .margin2x>.m-3,
+.line-full-width .margin2x>.m-4,
+.line-full-width .margin2x>.m-5,
+.line-full-width .margin2x>.m-6,
+.line-full-width .margin2x>.m-7,
+.line-full-width .margin2x>.m-8,
+.line-full-width .margin2x>.m-9,
+.line-full-width .margin2x>.m-10,
+.line-full-width .margin2x>.m-11,
+.line-full-width .margin2x>.m-12,
+.line-full-width .margin2x>.l-1,
+.line-full-width .margin2x>.l-2,
+.line-full-width .margin2x>.l-five,
+.line-full-width .margin2x>.l-3,
+.line-full-width .margin2x>.l-4,
+.line-full-width .margin2x>.l-5,
+.line-full-width .margin2x>.l-6,
+.line-full-width .margin2x>.l-7,
+.line-full-width .margin2x>.l-8,
+.line-full-width .margin2x>.l-9,
+.line-full-width .margin2x>.l-10,
+.line-full-width .margin2x>.l-11,
+.line-full-width .margin2x>.l-12,
+.line-full-width .margin2x>.xl-1,
+.line-full-width .margin2x>.xl-2,
+.line-full-width .margin2x>.xl-five,
+.line-full-width .margin2x>.xl-3,
+.line-full-width .margin2x>.xl-4,
+.line-full-width .margin2x>.xl-5,
+.line-full-width .margin2x>.xl-6,
+.line-full-width .margin2x>.xl-7,
+.line-full-width .margin2x>.xl-8,
+.line-full-width .margin2x>.xl-9,
+.line-full-width .margin2x>.xl-10,
+.line-full-width .margin2x>.xl-11,
+.line-full-width .margin2x>.xl-12,
+.line-full-width .margin2x>.xxl-1,
+.line-full-width .margin2x>.xxl-2,
+.line-full-width .margin2x>.xxl-five,
+.line-full-width .margin2x>.xxl-3,
+.line-full-width .margin2x>.xxl-4,
+.line-full-width .margin2x>.xxl-5,
+.line-full-width .margin2x>.xxl-6,
+.line-full-width .margin2x>.xxl-7,
+.line-full-width .margin2x>.xxl-8,
+.line-full-width .margin2x>.xxl-9,
+.line-full-width .margin2x>.xxl-10,
+.line-full-width .margin2x>.xxl-11,
+.line-full-width .margin2x>.xxl-12 {
   padding: 0 1.25rem;
 }
 
@@ -2019,6 +2019,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 }
 
 @media screen and (max-width: 1366px) {
+
   .hide-xxl,
   .hide-l,
   .hide-m,
@@ -2335,6 +2336,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 }
 
 @media screen and (max-width: 1140px) {
+
   .hide-xxl,
   .hide-xl,
   .hide-m,
@@ -2651,6 +2653,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 }
 
 @media screen and (max-width: 768px) {
+
   .size-960,
   .size-1140,
   .size-1280,
@@ -2676,10 +2679,10 @@ nav.breadcrumb-nav ul li:last-child:after {
   }
 
   .top-nav li a {
-    background: none repeat scroll 0 0 #1c3849;
+    background: none repeat scroll 0 0 seagreen;
   }
 
-  .top-nav > ul {
+  .top-nav>ul {
     height: 0;
     width: 100%;
     overflow: hidden;
@@ -2687,8 +2690,8 @@ nav.breadcrumb-nav ul li:last-child:after {
     z-index: 999;
   }
 
-  .top-nav > ul.show-menu,
-  .aside-nav.minimize-on-small > ul.show-menu {
+  .top-nav>ul.show-menu,
+  .aside-nav.minimize-on-small>ul.show-menu {
     height: auto;
   }
 
@@ -2729,13 +2732,13 @@ nav.breadcrumb-nav ul li:last-child:after {
     height: 0;
   }
 
-  .top-nav > ul ul.show-ul {
+  .top-nav>ul ul.show-ul {
     display: block;
     height: auto;
   }
 
   .top-nav li ul li a {
-    background: none repeat scroll 0 0 #2b4c61;
+    background: none repeat scroll 0 0 darkseagreen;
     padding: 0.625rem;
   }
 
@@ -2750,7 +2753,7 @@ nav.breadcrumb-nav ul li:last-child:after {
     left: -100%;
     width: 100% !important;
     bottom: 0;
-    background: none repeat scroll 0 0 #1c3849;
+    background: none repeat scroll 0 0 seagreen;
     overflow-y: auto;
     transition: left 0.2s linear 0s;
     -o-transition: left 0.2s linear 0s;
@@ -2768,7 +2771,7 @@ nav.breadcrumb-nav ul li:last-child:after {
     right: 60px;
   }
 
-  .top-nav > ul {
+  .top-nav>ul {
     height: auto;
     overflow: auto;
     position: relative;
@@ -2783,7 +2786,7 @@ nav.breadcrumb-nav ul li:last-child:after {
     position: fixed;
     top: 0;
     left: 0;
-    background: none repeat scroll 0 0 #1c3849;
+    background: none repeat scroll 0 0 #28a745;
     height: 60px;
     width: 60px;
     text-align: center;
@@ -3137,6 +3140,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 }
 
 @media screen and (max-width: 480px) {
+
   .size-960,
   .size-1140,
   .size-1280,
@@ -3149,7 +3153,7 @@ nav.breadcrumb-nav ul li:last-child:after {
   }
 
   .minimize-on-small .aside-nav-text {
-    background: #152732 none repeat scroll 0 0;
+    background: #28a745 none repeat scroll 0 0;
     color: #fff;
     cursor: pointer;
     display: block;
@@ -3169,7 +3173,7 @@ nav.breadcrumb-nav ul li:last-child:after {
     text-align: right;
   }
 
-  .aside-nav.minimize-on-small > ul {
+  .aside-nav.minimize-on-small>ul {
     height: 0;
     overflow: hidden;
   }
