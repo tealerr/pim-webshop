@@ -1,62 +1,62 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 h1 {
-  color: #333;
+    color: #333;
 }
 
 #registrationForm {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 button:hover {
-  background-color: #555;
+    background-color: #555;
 }
 
 #registrationMessage {
-  color: green;
-  font-weight: bold;
-  margin-top: 15px;
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 .fb-login-button {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

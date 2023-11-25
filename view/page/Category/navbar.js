@@ -17,10 +17,10 @@ $("header").html(`
                                 <p id="renderCart" class="right cart">
                                     <i class="fa fa-shopping-cart" style="font-size:24px""></i>
                                     <b id=" cart-count">${
-                                      myCart.length
+                                        myCart.length
                                     } items</b> / THB 
                                     <span id="total-price">${numberWithCommas(
-                                      netAmount.toFixed(2),
+                                        netAmount.toFixed(2)
                                     )}</span>
                                 </p>
                             </a>
@@ -57,4 +57,4 @@ $("header").html(`
                     </ul>
                 </div>
             </nav>
-        </div>`);
+        </div>`)

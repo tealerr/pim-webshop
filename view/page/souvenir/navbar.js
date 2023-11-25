@@ -17,10 +17,10 @@ $("header").html(`
                                 <p id="renderCart" class="right cart">
                                     <i class="fa fa-shopping-cart" style="font-size:24px""></i>
                                     <b id=" cart-count">${
-                                      myCart.length
+                                        myCart.length
                                     } items</b> / THB 
                                     <span id="total-price">${numberWithCommas(
-                                      netAmount.toFixed(2),
+                                        netAmount.toFixed(2)
                                     )}</span>
                                 </p>
                             </a>
@@ -55,13 +55,13 @@ $("header").html(`
                     </ul>
                 </div>
             </nav>
-        </div>`);
+        </div>`)
 
 $("#header2").html(`
     <div class="line">
             <div class="box">
                 <div class="m-12 l-2">
-                    <img class="full-img logo" src="../../image/logoSmartShop.jpg" alt="logo">
+                    <img class="full-img logo" src="../../../image/logoSmartShop.jpg" alt="logo">
                 </div>
                 <div class="m-12 l-8 right">
                     <div class="margin">
@@ -76,10 +76,10 @@ $("#header2").html(`
                                 <p id="renderCart" class="right cart">
                                     <i class="fa fa-shopping-cart" style="font-size:24px""></i>
                                     <b id=" cart-count">${
-                                      myCart.length
+                                        myCart.length
                                     } items</b> / THB 
                                     <span id="total-price">${numberWithCommas(
-                                      netAmount.toFixed(2),
+                                        netAmount.toFixed(2)
                                     )}</span>
                                 </p>
                             </a>
@@ -93,14 +93,14 @@ $("#header2").html(`
             <nav>
                 <div class="top-nav">
                     <ul class="right">
-                        <li><a href="../homepage.html">หน้าหลัก</a></li>
+                        <li><a href="../../homepage.html">หน้าหลัก</a></li>
                         <li>
                             <a>หมวดหมู่สินค้า</a>
                             <ul>
-                                <li><a href="../../page/souvenir/uniformAccessory.html">อุปกรณ์ชุดนักศึกษา</a></li>
-                                <li><a href="../../page/souvenir/poloAndTshirt.html">เสื้อโปโลและเสื้อยืด</a></li>
-                                <li><a href="../../page/souvenir/hoodAndLongShirt.html">เสื้อฮู้ดและเสื้อแขนยาว</a></li>
-                                <li><a href="../../page/souvenir/giftBasket.html">กระเช้าของขวัญ</a></li>
+                                <li><a href="../../../page/souvenir/uniformAccessory.html">อุปกรณ์ชุดนักศึกษา</a></li>
+                                <li><a href="../../../page/souvenir/poloAndTshirt.html">เสื้อโปโลและเสื้อยืด</a></li>
+                                <li><a href="../../../page/souvenir/hoodAndLongShirt.html">เสื้อฮู้ดและเสื้อแขนยาว</a></li>
+                                <li><a href="../../../page/souvenir/giftBasket.html">กระเช้าของขวัญ</a></li>
                             </ul>
                         </li>
                         <li>
@@ -114,4 +114,4 @@ $("#header2").html(`
                     </ul>
                 </div>
             </nav>
-        </div>`);
+        </div>`)

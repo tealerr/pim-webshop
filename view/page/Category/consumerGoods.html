@@ -68,133 +68,7 @@
           <h1 class="margin-bottom">Products</h1>
           <!-- Pruducts -->
           <div id="render" class="margin2x">
-            <!-- <div class="s-12 m-12 l-4 xl-3 xxl-3">
-              <a href="">
-                <img class="full-img" src="../../image/product/consumer/lactasoy.jpg" alt="นมLactasoy" />
-              </a>
-              <h5>10.00 บาท</h5>
-              <a href="/">
-                <h4 class="margin-bottom">
-                  <strong>นม Lactasoy</strong>
-                </h4>
-              </a>
-              <p class="margin-bottom">
-
-              </p>
-              <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(39.00); return false;">
-                <div>
-                  <button class="button rounded-btn submit-btn s-12" type="submit">
-                    Add to Cart
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="s-12 m-12 l-4 xl-3 xxl-3">
-              <a href="">
-                <img class="full-img" src="../../image/product/consumer/elis.jpg" alt="ผ้าอนามัย Elis" />
-              </a>
-              <h5>20.00 บาท</h5>
-              <a href="/">
-                <h4 class="margin-bottom">
-                  <strong>ผ้าอนามัย Elis</strong>
-                </h4>
-              </a>
-              <p class="margin-bottom">
-
-              </p>
-              <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(39.00); return false;">
-                <div>
-                  <button class="button rounded-btn submit-btn s-12" type="submit">
-                    Add to Cart
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="s-12 m-12 l-4 xl-3 xxl-3">
-              <a href="">
-                <img class="full-img" src="../../image/product/consumer/lay.jpg" alt="เลย์รสสาหร่าย" />
-              </a>
-              <h5>25.00 บาท</h5>
-              <a href="/">
-                <h4 class="margin-bottom">
-                  <strong>เลย์รสสาหร่าย</strong>
-                </h4>
-              </a>
-              <p class="margin-bottom">
-
-              </p>
-              <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(39.00); return false;">
-                <div>
-                  <button class="button rounded-btn submit-btn s-12" type="submit">
-                    Add to Cart
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="s-12 m-12 l-4 xl-3 xxl-3">
-              <a href="">
-                <img class="full-img" src="../../image/product/consumer/balm.jpg" alt="ยาหม่องเฌอเอม" />
-              </a>
-              <h5>25.00 บาท</h5>
-              <a href="/">
-                <h4 class="margin-bottom">
-                  <strong>ยาหม่องเฌอเอม</strong>
-                </h4>
-              </a>
-              <p class="margin-bottom">
-
-              </p>
-              <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(39.00); return false;">
-                <div>
-                  <button class="button rounded-btn submit-btn s-12" type="submit">
-                    Add to Cart
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="s-12 m-12 l-4 xl-3 xxl-3">
-              <a href="">
-                <img class="full-img" src="../../image/product/consumer/fineline.jpg" alt="น้ำยาปรับผ้านุ่ม Fineline" />
-              </a>
-              <h5>40.00 บาท</h5>
-              <a href="/">
-                <h4 class="margin-bottom">
-                  <strong>น้ำยาปรับผ้านุ่ม Fineline</strong>
-                </h4>
-              </a>
-              <p class="margin-bottom">
-
-              </p>
-              <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(39.00); return false;">
-                <div>
-                  <button class="button rounded-btn submit-btn s-12" type="submit">
-                    Add to Cart
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="s-12 m-12 l-4 xl-3 xxl-3">
-              <a href="">
-                <img class="full-img" src="../../image/product/consumer/waterPack.jpg" alt="น้ำสิงห์แพ็คใหญ่" />
-              </a>
-              <h5>60.00 บาท</h5>
-              <a href="/">
-                <h4 class="margin-bottom">
-                  <strong>น้ำสิงห์แพ็คใหญ่</strong>
-                </h4>
-              </a>
-              <p class="margin-bottom">
-
-              </p>
-              <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(39.00); return false;">
-                <div>
-                  <button class="button rounded-btn submit-btn s-12" type="submit">
-                    Add to Cart
-                  </button>
-                </div>
-              </form>
-            </div> -->
-            </form>
+          
           </div>
       </div>
       </section>
@@ -242,26 +116,29 @@
                 const element = productMaster.food[i];
                 html +=`
                 <div class="s-12 m-12 l-4 xl-3 xxl-3">
-                    <a href="">
-                        <img class="full-img" src="${element.img}"/>
-                    </a>
-                    <h5>${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-                    <a href="/">
-                        <h5 class="margin-bottom">
-                            <strong>${element.name}</strong>
-                        </h5>
-                    </a>
-                    <p class="margin-bottom">
-
-                    </p>
-                    <div class="customform s-12 margin-bottom2x" >
-                        <div>
-                            <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12" >
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>`
+    <div class="card">
+        <a href="">
+            <img class="full-img card-img" src="${element.img}" alt="${element.name}" />
+        </a>
+        <div class="card-content">
+            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
+            <a href="/" class="card-title margin-bottom">
+                <h5>
+                    <strong>${element.name}</strong>
+                </h5>
+            </a>
+            <p class="margin-bottom"></p>
+            <div class="customform s-12 margin-bottom2x">
+                <div>
+                    <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`
             }
             $("#render").html(html);
         }

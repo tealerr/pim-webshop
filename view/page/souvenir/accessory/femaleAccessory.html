@@ -65,102 +65,12 @@
                         <ul>
 
                             <li><a href="../smart.html">หมวดหมู่สินค้า</a></li>
-                            <li><a href="bagAndShoes.html">อุปกรณ์ชุดนักศึกษา</a></li>
+                            <li><a href="">เครื่องแบบนักศึกษาหญิง</a></li>
                         </ul>
                     </nav>
                     <h1 class="margin-bottom">รายการสินค้า</h1>
                     <!-- Pruducts -->
                     <div id="render" class="margin2x">
-                        <!-- <div class="s-12 m-12 l-4 xl-3 xxl-3">
-                            <a href="">
-                                <img class="full-img" src="../../../image/souvenir/เครื่องแบบนักศึกษาหญิง/กระดุม.jpg"
-                                    alt="กระดุม" />
-                            </a>
-                            <h5>50.00 บาท</h5>
-                            <a href="/">
-                                <h5 class="margin-bottom">
-                                    <strong>กระดุม</strong>
-                                </h5>
-                            </a>
-                            <p class="margin-bottom">
-
-                            </p>
-                            <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(50.00); return false;">
-                                <div>
-                                    <button class="button rounded-btn submit-btn s-12" type="submit">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="s-12 m-12 l-4 xl-3 xxl-3">
-                            <a href="">
-                                <img class="full-img" src="../../../image/souvenir/เครื่องแบบนักศึกษาหญิง/ตุ้งติ้ง.jpg"
-                                    alt="ตุ้งติ้ง" />
-                            </a>
-                            <h5>55.00 บาท</h5>
-                            <a href="/">
-                                <h5 class="margin-bottom">
-                                    <strong>ตุ้งติ้ง</strong>
-                                </h5>
-                            </a>
-                            <p class="margin-bottom">
-
-                            </p>
-                            <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(55.00); return false;">
-                                <div>
-                                    <button class="button rounded-btn submit-btn s-12" type="submit">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="s-12 m-12 l-4 xl-3 xxl-3">
-                            <a href="">
-                                <img class="full-img" src="../../../image/souvenir/เครื่องแบบนักศึกษาหญิง/เข็มกลัด.jpg"
-                                    alt="เข็มกลัด" />
-                            </a>
-                            <h5>55.00 บาท</h5>
-                            <a href="/">
-                                <h5 class="margin-bottom">
-                                    <strong>เข็มกลัด</strong>
-                                </h5>
-                            </a>
-                            <p class="margin-bottom">
-
-                            </p>
-                            <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(55.00); return false;">
-                                <div>
-                                    <button class="button rounded-btn submit-btn s-12" type="submit">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="s-12 m-12 l-4 xl-3 xxl-3">
-                            <a href="">
-                                <img class="full-img" src="../../../image/souvenir/เครื่องแบบนักศึกษาชาย/belt.jpg"
-                                    alt="เข็มขัด" />
-                            </a>
-                            <h5>120.00 บาท</h5>
-                            <a href="/">
-                                <h5 class="margin-bottom">
-                                    <strong>เข็มขัด</strong>
-                                </h5>
-                            </a>
-                            <p class="margin-bottom">
-
-                            </p>
-                            <form class="customform s-12 margin-bottom2x" onsubmit="addToCart(120.00); return false;">
-                                <div>
-                                    <button class="button rounded-btn submit-btn s-12" type="submit">
-                                        Add to Cart
-                                    </button>
-                                </div>
-                            </form>
-                        </div> -->
-                        </form>
                     </div>
             </div>
             </section>
@@ -192,27 +102,30 @@
             for (let i = 0; i < productMaster.student.women.length; i++) {
                 const element = productMaster.student.women[i];
                 html += `
-                <div class="s-12 m-12 l-4 xl-3 xxl-3">
-                    <a href="">
-                        <img class="full-img" src="${element.img}"/>
-                    </a>
-                    <h5>${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-                    <a href="/">
-                        <h4 class="margin-bottom">
-                            <strong>${element.name}</strong>
-                        </h4>
-                    </a>
-                    <p class="margin-bottom">
-
-                    </p>
-                    <div class="customform s-12 margin-bottom2x" >
-                        <div>
-                            <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12" >
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>`;
+                <div class="s-12 m-6 l-4 xl-3 xxl-3">
+    <div class="card">
+        <a href="">
+            <img class="card-img" src="${element.img}" alt="${element.name}" />
+        </a>
+        <div class="card-content">
+            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
+            <a href="/">
+                <h4 class="card-title margin-bottom">
+                    <strong>${element.name}</strong>
+                </h4>
+            </a>
+            <p class="margin-bottom"></p>
+            <div class="customform s-12 margin-bottom2x">
+                <div>
+                    <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`;
             }
             $("#render").html(html)
         }
