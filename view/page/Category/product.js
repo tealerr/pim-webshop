@@ -172,19 +172,19 @@ const productMaster = {
         },
         {
             id: 28,
-            name: "กรเป๋ามือสองโทนม่วงเข้ม",
+            name: "กระเป๋ามือสองโทนม่วงเข้ม",
             img: "../../image/product/bagAndShoes/bagDeepPurple.jpg",
             price: 290,
         },
         {
             id: 29,
-            name: "กรเป๋ามือสองโทนเขียว",
+            name: "กระเป๋ามือสองโทนเขียว",
             img: "../../image/product/bagAndShoes/bagGreen.jpg",
             price: 350,
         },
         {
             id: 30,
-            name: "กรเป๋ามือสองโทนม่วงอ่อน",
+            name: "กระเป๋ามือสองโทนม่วงอ่อน",
             img: "../../image/product/bagAndShoes/bagSoftPurple.jpg",
             price: 350,
         },
@@ -196,7 +196,7 @@ const productMaster = {
         },
         {
             id: 31,
-            name: "กรเป๋ามือสองทูโทน",
+            name: "กระเป๋ามือสองทูโทน",
             img: "../../image/product/bagAndShoes/bagTwoTone.jpg",
             price: 350,
         },
@@ -244,6 +244,7 @@ for (let x = 0; x < master.length; x++) {
         productMap.set(e3.id, e3)
     }
 }
+
 function numberWithCommas(x) {
     x = x.toString()
     var pattern = /(-?\d+)(\d{3})/
@@ -252,6 +253,7 @@ function numberWithCommas(x) {
 }
 var myCart = []
 var netAmount = 0
+
 function addCart(id) {
     const thisProd = productMap.get(id)
     var pass = false

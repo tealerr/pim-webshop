@@ -116,29 +116,29 @@
                 const element = productMaster.electric[i];
                 html += `
                 <div class="s-12 m-6 l-4 xl-3 xxl-3">
-    <div class="card">
-        <a href="">
-            <img class="card-img" src="${element.img}" alt="${element.name}" />
-        </a>
-        <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="/" class="card-title margin-bottom">
-                <h4>
-                    <strong>${element.name}</strong>
-                </h4>
-            </a>
-            <p class="margin-bottom"></p>
-            <div class="customform s-12 margin-bottom2x">
-                <div>
-                    <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12">
-                        Add to Cart
-                    </button>
+                    <div class="card">
+                        <a href="">
+                            <img class="card-img" src="${element.img}" alt="${element.name}" />
+                        </a>
+                        <div class="card-content">
+                            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
+                            <a href="/" class="card-title margin-bottom">
+                                <h4>
+                                    <strong>${element.name}</strong>
+                                </h4>
+                            </a>
+                            <p class="margin-bottom"></p>
+                            <div class="customform s-12 margin-bottom2x">
+                                <div>
+                                    <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-`;
+                `;
             }
             $("#render").html(html)
         }

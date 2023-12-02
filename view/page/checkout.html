@@ -26,6 +26,22 @@
     <body class="p-5">
         <nav class="navbar bg-light">
             <div class="container-fluid">
+                <div class="d-flex card w-100 flex-row p-2 align-items-center">
+                    <img
+                        id="txt_shopimg"
+                        class="full-img logo"
+                        src=""
+                        alt="logo"
+                        style="
+                            width: 100px;
+                            margin-left: 10px;
+                            object-fit: contain;
+                        "
+                    />
+                    <div class="ms-3">
+                        <h1 id="txt_shopname"></h1>
+                    </div>
+                </div>
                 <!-- Back button visible on small and medium screens -->
                 <button
                     onclick="goBack()"
@@ -280,6 +296,8 @@
             var payment = 0
             $(document).ready(() => {
                 if (fromx && fromx == "2") {
+                    $("#txt_shopimg").attr("src", "./../image/souvenir.png")
+                    $("#txt_shopname").text("PIM SOUVENIR SHOP")
                     finalCart = JSON.parse(localStorage.myCart2)
                     var myPrice = 0
                     for (let i = 0; i < finalCart.length; i++) {
@@ -310,6 +328,8 @@
                     }
                     $("#renderFinalCart").html(html)
                 } else {
+                    $("#txt_shopimg").attr("src", "./../image/smart2.jpg")
+                    $("#txt_shopname").text("PIM SMART SHOP")
                     finalCart = JSON.parse(localStorage.myCart)
                     var myPrice = 0
                     for (let i = 0; i < finalCart.length; i++) {
@@ -325,10 +345,16 @@
                         for (let i = 0; i < finalCart.length; i++) {
                             const element = finalCart[i]
                             html += `
+            <div class="d-flex justify-content-between align-items-center">
               <div class="d-flex justify-content-between">
                   <div>[x${element.count}] ${element.name}</div>
                   <div>${element.netAmount.toFixed(2)} THB</div>
-              </div>`
+              </div>
+              <div class="d-flex align-items-center">
+                <button onclick="getInfo(${i})" class="btn btn-warning me-1" data-bs-toggle="modal" data-bs-target="#md_edit">แก้ไข</button>
+                <button onclick="removeInfo(${i})" class="btn btn-danger">ลบ</button>
+              </div>
+            </div>`
                         }
                     }
                     $("#renderFinalCart").html(html)

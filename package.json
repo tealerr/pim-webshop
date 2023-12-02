@@ -83,13 +83,13 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write .",
         "prepare": "husky install",
+        "postinstall": "husky install",
         "pre-commit": "prettier --check ."
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "husky": "^8.0.3",
         "lint-staged": "^15.1.0",
         "prettier": "3.1.0"
     },
