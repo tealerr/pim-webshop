@@ -68,16 +68,16 @@
                         <div class="row">
                             <div class="col-50">
                                 <h3>ข้อมูลที่อยู่การจัดส่ง</h3>
-                                <label for="fname">
+                                <label for="name">
                                     <i class="fa fa-user"></i>
                                     ชื่อ-นามสกุล
                                 </label>
                                 <input
                                     type="text"
-                                    id="fname"
+                                    id="name"
                                     class="form-control"
                                     name="firstname"
-                                    placeholder="john doe"
+                                    placeholder="ปัญญา ภิวัตน์"
                                 />
                                 <label for="email">
                                     <i class="fa fa-envelope"></i>
@@ -215,7 +215,7 @@
                             "
                         />
                         <button
-                            onclick="submit()"
+                            onclick="submit(); sendEmail();"
                             class="btn btn-outline-success"
                         >
                             ยืนยันการชำระเงิน
@@ -442,18 +442,18 @@
                 readURL(this)
             })
             function submit() {
-                $("#fname").removeClass("is-invalid")
+                $("#name").removeClass("is-invalid")
                 $("#email").removeClass("is-invalid")
                 $("#adr").removeClass("is-invalid")
                 $("#city").removeClass("is-invalid")
                 $("#state").removeClass("is-invalid")
                 $("#zip").removeClass("is-invalid")
-                if ($("#fname").val().length <= 0) {
+                if ($("#name").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดระบุชื่อ",
                     })
-                    $("#fname").addClass("is-invalid")
+                    $("#name").addClass("is-invalid")
                 } else if ($("#email").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
@@ -521,6 +521,30 @@
             }
             function goBack() {
                 window.history.back()
+            }
+
+            function sendEmail() {
+                const email = $("#email").val()
+                const name = $("#name").val()
+
+                const data = {
+                    to: email,
+                    subject: "Confirmation of Payment",
+                    text: `Dear, ${name}\nYour payment has been confirmed. Thank you for your purchase!`,
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:3000/send-email",
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    success: function (response) {
+                        console.log(response)
+                    },
+                    error: function (error) {
+                        console.error(error)
+                    },
+                })
             }
         </script>
     </body>
