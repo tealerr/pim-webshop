@@ -526,11 +526,16 @@
             function sendEmail() {
                 const email = $("#email").val()
                 const name = $("#name").val()
+                const address = $("#adr").val()
+                const city = $("#city").val()
+                const state = $("#state").val()
+                const zip = $("#zip").val()
 
                 const data = {
                     to: email,
                     subject: "Confirmation of Payment",
-                    text: `Dear, ${name}\nYour payment has been confirmed. Thank you for your purchase!`,
+                    text: `Dear, ${name}\nYour payment has been confirmed. Thank you for your purchase!\n ที่อยู่ของคุณ\n ${city}\n${state}\n${zip}
+                    `,
                 }
 
                 $.ajax({
