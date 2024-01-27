@@ -196,12 +196,14 @@
                         >
                             Browse
                         </button>
+
                         <input
-                            onchange="imageUpload()"
+                            onchange="imageUpload('someArgument')"
                             type="file"
                             style="display: none"
                             id="myFile"
-                            name="filename"
+                            name="slipFile"
+                            accept=".jpg, .jpeg, .png"
                         />
 
                         <img
@@ -442,81 +444,70 @@
                 readURL(this)
             })
             function submit() {
+                console.log("Submit function is called")
+
                 $("#name").removeClass("is-invalid")
                 $("#email").removeClass("is-invalid")
                 $("#adr").removeClass("is-invalid")
                 $("#city").removeClass("is-invalid")
                 $("#state").removeClass("is-invalid")
                 $("#zip").removeClass("is-invalid")
+
+                let isValid = true
+
                 if ($("#name").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดระบุชื่อ",
                     })
                     $("#name").addClass("is-invalid")
+                    isValid = false
                 } else if ($("#email").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดระบุอีเมล",
                     })
                     $("#email").addClass("is-invalid")
+                    isValid = false
                 } else if ($("#adr").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดระบุที่อยู่",
                     })
                     $("#adr").addClass("is-invalid")
+                    isValid = false
                 } else if ($("#city").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดระบุอำเภอ/เขต",
                     })
                     $("#city").addClass("is-invalid")
+                    isValid = false
                 } else if ($("#state").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดระบุจังหวัด",
                     })
                     $("#state").addClass("is-invalid")
+                    isValid = false
                 } else if ($("#zip").val().length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดระบุรหัสไปษณีย์",
                     })
                     $("#zip").addClass("is-invalid")
+                    isValid = false
                 } else if ($("#mySlip").attr("src").length <= 0) {
                     Swal.fire({
                         icon: "warning",
                         title: "โปรดอัพโหลดสลิป",
                     })
-                } else {
-                    Swal.fire({
-                        icon: "info",
-                        title: "ยืนยันการสั่งซื้อสินค้า",
-                        text: `รวมทั้งสิ้น ${payment} บาท`,
-                        showConfirmButton: true,
-                        showCancelButton: true,
-                        confirmButtonText: "ยืนยัน",
-                        cancelButtonText: "ยกเลิก",
-                    }).then((res) => {
-                        if (res.isConfirmed) {
-                            Swal.fire({
-                                icon: "success",
-                                title: "สำเร็จ",
-                                timer: 2000,
-                            }).then(() => {
-                                if (fromx && fromx == "2") {
-                                    localStorage.removeItem("myCart2")
-                                    window.location.href =
-                                        "./souvenir/uniformAccessory.html"
-                                } else {
-                                    localStorage.removeItem("myCart")
-                                    window.location.href =
-                                        "./Category/electricAppliance.html"
-                                }
-                            })
-                        }
-                    })
+                    isValid = false
+                }
+
+                if (isValid) {
+                    sendEmail()
+                    uploadSlip()
                 }
             }
             function goBack() {
@@ -531,25 +522,55 @@
                 const state = $("#state").val()
                 const zip = $("#zip").val()
 
+                const textContent = `Dear, ${name}\nYour payment has been confirmed. Thank you for your purchase! 
+                <p>ที่อยู่ของคุณ</p>
+                ${address}, ${city}, ${state}, ${zip}`
+
                 const data = {
                     to: email,
                     subject: "Confirmation of Payment",
-                    text: `Dear, ${name}\nYour payment has been confirmed. Thank you for your purchase!\n ที่อยู่ของคุณ\n ${city}\n${state}\n${zip}
-                    `,
+                    text: textContent,
                 }
-
-                $.ajax({
-                    type: "POST",
-                    url: "http://localhost:3000/send-email",
-                    contentType: "application/json",
-                    data: JSON.stringify(data),
-                    success: function (response) {
-                        console.log(response)
+                fetch("http://localhost:4000/send-email", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
                     },
-                    error: function (error) {
-                        console.error(error)
-                    },
+                    body: JSON.stringify(data),
                 })
+                    .then((response) => response.json())
+                    .then((result) => {
+                        if (result.success) {
+                            console.log(result.message)
+                        } else {
+                            console.error(result.message)
+                        }
+                    })
+                    .catch((error) => console.error(error))
+            }
+
+            function uploadSlip(argument) {
+                const formData = new FormData()
+                const slipFileInput = document.getElementById("myFile")
+
+                if (slipFileInput.files.length > 0) {
+                    formData.append("image", slipFileInput.files[0])
+                    formData.append("argument", argument)
+
+                    fetch("http://localhost:4000/upload-image", {
+                        method: "POST",
+                        body: formData,
+                    })
+                        .then((response) => response.json())
+                        .then((data) => console.log("Slip uploaded:", data))
+                        .catch((error) =>
+                            console.error("Error uploading slip:", error)
+                        )
+                }
+            }
+
+            function imageUpload(argument) {
+                uploadSlip(argument)
             }
         </script>
     </body>

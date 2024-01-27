@@ -1,11 +1,14 @@
-import express, { Request, Response, NextFunction } from "express"
+import express, { Request, Response } from "express"
 import { sendMailFunction } from "../service/sendMail"
 import { uploadImageFunction } from "../service/uploadImage"
 import * as inventory from "../service/inventory"
 import Product from "../models/product.model"
 import bodyParser from "body-parser"
+import cors from "cors"
 
 const app = express()
+app.use(cors())
+
 app.use(bodyParser.json())
 
 // Add route to get all products
@@ -68,6 +71,10 @@ app.post("/upload-image", async (req: Request, res: Response) => {
     } catch (error: any) {
         res.status(500).send(error.toString())
     }
+})
+
+app.get("/health", (req, res) => {
+    res.status(200).send("UP")
 })
 
 const PORT = process.env.PORT || 4000

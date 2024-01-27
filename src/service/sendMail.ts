@@ -10,7 +10,7 @@ interface MailRequest {
 
 const sendMailFunction = async (reqBody: MailRequest): Promise<string> => {
     try {
-        const htmlTemplate = `
+        const confirmTemplate = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -21,11 +21,7 @@ const sendMailFunction = async (reqBody: MailRequest): Promise<string> => {
         </head>
         <body>
             <div style="text-align: center; padding: 20px;">
-                <h2>Hello,</h2>
-                <p style="color: #333; font-size: 16px;">This is a styled paragraph.</p>
-                <p>This is a simple HTML email template. You can customize it further based on your needs.</p>
-                <p>Feel free to add more content, styles, and elements to create a rich email experience.</p>
-                <p>Best regards,</p>
+                <h2>ขอบคุณสำหรับคำสั่งซื้อ</h2>
                 <p>${reqBody.text}</p>
             </div>
         </body>
@@ -49,7 +45,7 @@ const sendMailFunction = async (reqBody: MailRequest): Promise<string> => {
             to: reqBody.to,
             subject: reqBody.subject,
             text: reqBody.text,
-            html: htmlTemplate,
+            html: confirmTemplate,
         }
 
         const info = await transporter.sendMail(mailOptions)
