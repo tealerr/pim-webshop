@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
 
 import Product from "../models/product.model"
-import bodyParser from "body-parser"
 
 export const getProductById = async (productId: string) => {
     try {

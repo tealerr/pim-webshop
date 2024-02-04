@@ -1,31 +1,10 @@
+// uploadImage.ts
 import express from "express"
-import mongoose, { Document, SaveOptions } from "mongoose"
 import multer from "multer"
 import path from "path"
+import Image from "../models/image.model"
 
 const app = express()
-const port = 3000
-
-// Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/imageDB", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-} as mongoose.ConnectOptions)
-
-// Define the image document interface
-interface ImageDocument extends Document {
-    filename: string
-    path: string
-}
-
-// Create a schema for the image model
-const imageSchema = new mongoose.Schema({
-    filename: String,
-    path: String,
-})
-
-// Create the image model
-const Image = mongoose.model<ImageDocument>("Image", imageSchema)
 
 // Set up Multer for file uploads
 const storage = multer.diskStorage({
@@ -67,10 +46,5 @@ app.get("/images", async (req, res) => {
         res.status(500).send(error.message)
     }
 })
-
-// Start the server
-// app.listen(port, () => {
-//     console.log(`Server is running at http://localhost:${port}`)
-// })
 
 export { uploadImageFunction }

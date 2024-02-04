@@ -217,7 +217,7 @@
                             "
                         />
                         <button
-                            onclick="submit(); sendEmail();"
+                            onclick="submit()"
                             class="btn btn-outline-success"
                         >
                             ยืนยันการชำระเงิน
@@ -503,10 +503,39 @@
                         title: "โปรดอัพโหลดสลิป",
                     })
                     isValid = false
+                } else {
+                    Swal.fire({
+                        icon: "info",
+                        title: "ยืนยันการสั่งซื้อสินค้า",
+                        text: `รวมทั้งสิ้น ${payment} บาท`,
+                        showConfirmButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: "ยืนยัน",
+                        cancelButtonText: "ยกเลิก",
+                    }).then((res) => {
+                        if (res.isConfirmed) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "สำเร็จ",
+                                timer: 2000,
+                            }).then(() => {
+                                if (fromx && fromx == "2") {
+                                    localStorage.removeItem("myCart2")
+                                    window.location.href =
+                                        "./souvenir/uniformAccessory.html"
+                                } else {
+                                    localStorage.removeItem("myCart")
+                                    window.location.href =
+                                        "./Category/electricAppliance.html"
+                                }
+                            })
+                        }
+                    })
+                    sendEmail()
+                    isValid = false
                 }
 
                 if (isValid) {
-                    sendEmail()
                     uploadSlip()
                 }
             }
