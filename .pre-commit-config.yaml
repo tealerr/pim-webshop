@@ -13,3 +13,8 @@ repos:
             files: \.js$
             additional_dependencies: ["prettier"]
             language: node
+    - repo: https://github.com/conventional-changelog/commitlint
+      rev: v13.1.0
+      hooks:
+        - id: commitlint
+          stages: [commit-msg]
