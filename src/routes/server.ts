@@ -3,13 +3,13 @@ import mongoose from "mongoose"
 import { sendMailFunction } from "../service/sendMail"
 import { uploadImageFunction } from "../service/uploadImage"
 import * as inventory from "../service/inventory"
-import Product from "../models/product.model"
 import bodyParser from "body-parser"
 import cors from "cors"
 import { register } from "../service/regis"
 import Customer from "../models/customer.model"
 import connectDB from "../service/db"
 import { login } from "../service/login"
+import { addProduct } from "../service/insertProduct"
 
 const app = express()
 app.use(cors())
@@ -22,40 +22,11 @@ const startServer = async () => {
         await connectDB()
         console.log("Connected to MongoDB")
 
-        // Add route to create a new product
-        app.post("/products-create", async (req, res) => {
-            try {
-                const { name, productId, count } = req.body
+        app.post("/api/create-products", addProduct)
 
-                // Check if required fields are present
-                if (!name || !productId || !count) {
-                    return res
-                        .status(400)
-                        .json({ error: "Missing required fields" })
-                }
+        app.get("/products", inventory.getAllProducts)
 
-                const newProduct = await Product.create({
-                    name,
-                    productId,
-                    count,
-                })
-                res.status(201).json(newProduct)
-            } catch (error: any) {
-                res.status(500).send(error.toString())
-            }
-        })
-
-        app.get("/products", async (req: Request, res: Response) => {
-            try {
-                const allProducts = await Product.find()
-                res.json(allProducts)
-            } catch (error: any) {
-                res.status(500).send(error.toString())
-            }
-        })
-
-        // Add route to get product inventory
-        app.get("/products/:productId", async (req: Request, res: Response) => {
+        app.get("/product/:productId", async (req: Request, res: Response) => {
             try {
                 const product = await inventory.getProductById(
                     req.params.productId
@@ -67,17 +38,13 @@ const startServer = async () => {
             }
         })
 
-        // Add route to update product count after purchase
-        app.post(
-            "/checkout/:productId",
-            async (req: Request, res: Response) => {
-                try {
-                    await inventory.checkoutProduct(req, res)
-                } catch (error: any) {
-                    res.status(500).send(error.toString())
-                }
+        app.post("/checkout", async (req: Request, res: Response) => {
+            try {
+                await inventory.checkoutProduct(req, res)
+            } catch (error: any) {
+                res.status(500).send(error.toString())
             }
-        )
+        })
 
         app.post("/send-email", (req: Request, res: Response) => {
             sendMailFunction(req.body)

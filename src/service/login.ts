@@ -11,14 +11,16 @@ export async function login(req: Request, res: Response) {
         const user: IUser | null = await Register.findOne({ username })
 
         if (!user) {
-            return res.status(400).json({ message: "Invalid credentials" })
+            return res.status(400).json({ message: "Invalid username" })
         }
 
         // Check password
         const isMatch: boolean = await bcrypt.compare(password, user.password)
 
         if (!isMatch) {
-            return res.status(400).json({ message: "Invalid credentials" })
+            return res
+                .status(400)
+                .json({ message: "username or password is incorrect" })
         }
 
         // Create JWT payload
