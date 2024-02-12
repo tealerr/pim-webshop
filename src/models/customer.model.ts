@@ -1,9 +1,8 @@
-// customer.model.ts
-import mongoose, { Document } from "mongoose"
+import mongoose, { Document, Schema } from "mongoose"
 
-// Define the customer document interface
-interface CustomerDocument extends Document {
+interface CustomerInfoModel extends Document {
     email: string
+    phoneNumber: string
     name: string
     address: string
     city: string
@@ -12,18 +11,20 @@ interface CustomerDocument extends Document {
     image: string
 }
 
-// Define the customer schema
-const customerSchema = new mongoose.Schema({
-    email: String,
-    name: String,
-    address: String,
-    city: String,
-    state: String,
-    zip: String,
-    image: String,
+const CustomerInfoSchema = new Schema<CustomerInfoModel>({
+    email: { type: String, required: true },
+    phoneNumber: { type: String, required: true },
+    name: { type: String, required: true },
+    address: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zip: { type: String, required: true },
+    image: { type: String, required: true },
 })
 
-// Create the customer model
-const Customer = mongoose.model<CustomerDocument>("Customer", customerSchema)
+const CustomerInfoModel = mongoose.model<CustomerInfoModel>(
+    "CustomerInfo",
+    CustomerInfoSchema
+)
 
-export default Customer
+export default CustomerInfoModel

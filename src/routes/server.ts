@@ -10,6 +10,8 @@ import Customer from "../models/customer.model"
 import connectDB from "../service/db"
 import { login } from "../service/login"
 import { addProduct } from "../service/insertProduct"
+import path from "path"
+import * as customerInfo from "../service/customerInfo"
 
 const app = express()
 app.use(cors())
@@ -25,6 +27,8 @@ const startServer = async () => {
         app.post("/api/create-products", addProduct)
 
         app.get("/products", inventory.getAllProducts)
+        app.get("/api/customer-info", customerInfo.getCustomerInfo)
+        app.post("/api/create-order", customerInfo.insertCustomerInfo)
 
         app.get("/product/:productId", async (req: Request, res: Response) => {
             try {
@@ -86,6 +90,8 @@ const startServer = async () => {
         console.error("Error starting server:", error)
         process.exit(1)
     }
+
+    app.use("/", express.static(path.join(__dirname, "..", "view")))
 }
 
 startServer()

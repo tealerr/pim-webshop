@@ -1,0 +1,672 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link rel="stylesheet" href="styles/checkout.css" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+
+    <body class="p-5">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <div class="d-flex card w-100 flex-row p-2 align-items-center">
+                    <img
+                        id="txt_shopimg"
+                        class="full-img logo"
+                        src=""
+                        alt="logo"
+                        style="
+                            width: 100px;
+                            margin-left: 10px;
+                            object-fit: contain;
+                        "
+                    />
+                    <div class="ms-3">
+                        <h1 id="txt_shopname"></h1>
+                    </div>
+                </div>
+                <!-- Back button visible on small and medium screens -->
+                <button
+                    onclick="goBack()"
+                    class="btn btn-outline-success mr-2 d-block d-md-none"
+                >
+                    Back
+                </button>
+
+                <!-- You can add other navbar elements here if needed -->
+
+                <!-- Back button visible on large screens -->
+                <button
+                    onclick="goBack()"
+                    class="btn btn-outline-success mr-2 d-none d-lg-block"
+                >
+                    Back
+                </button>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-50">
+                <div class="container">
+                    <form id="orderForm">
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>ข้อมูลที่อยู่การจัดส่ง</h3>
+                                <label for="name">
+                                    <i class="fa fa-user"></i>
+                                    ชื่อ-นามสกุล
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="form-control"
+                                    name="firstname"
+                                    placeholder="ปัญญา ภิวัตน์"
+                                />
+                                <label for="phoneNumber">
+                                    <i class="fa fa-mobile"></i>
+                                    เบอร์โทรศัพท์
+                                </label>
+                                <input
+                                    type="text"
+                                    id="phoneNumber"
+                                    class="form-control"
+                                    name="phoneNumber"
+                                    placeholder="0855555555"
+                                    title="Please enter only digits (0-9)"
+                                    required
+                                    pattern="[0-9]+"
+                                />
+
+                                <label for="email">
+                                    <i class="fa fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input
+                                    type="text"
+                                    id="email"
+                                    class="form-control"
+                                    name="email"
+                                    placeholder="john@example.com"
+                                />
+                                <label for="adr">
+                                    <i class="fa fa-address-card-o"></i>
+                                    ที่อยู่ อาคาร ถนน
+                                </label>
+                                <input
+                                    type="text"
+                                    id="adr"
+                                    cla
+                                    ss="form-control"
+                                    name="address"
+                                    placeholder="บ้านเลขที่ อาคาร ถนน"
+                                />
+                                <label for="city">
+                                    <i class="fa fa-institution"></i>
+                                    อำเภอ/เขต
+                                </label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    class="form-control"
+                                    name="city"
+                                    placeholder="พระนคร"
+                                />
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label for="state">จังหวัด</label>
+                                        <input
+                                            type="text"
+                                            id="state"
+                                            class="form-control"
+                                            name="state"
+                                            placeholder="กรุงเทพ"
+                                        />
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="zip">รหัสไปรษณีย์</label>
+                                        <input
+                                            type="text"
+                                            id="zip"
+                                            class="form-control"
+                                            name="zip"
+                                            placeholder="10000"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked="checked"
+                                name="sameadr"
+                            />
+                            ใช้ที่อยู่เดียวกันกับการจัดส่งใบเสร็จ
+                        </label>
+                    </form>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="payment-container">
+                    <h4>
+                        Cart
+                        <span class="price" style="color: black">
+                            <i class="fa fa-shopping-cart"></i>
+                            <b><span id="myItems">0</span> items</b>
+                        </span>
+                    </h4>
+                    <!-- Product details here -->
+                    <hr />
+                    <main id="renderFinalCart"></main>
+                    <p style="font-weight: bold">
+                        Total
+                        <span
+                            class="price"
+                            style="color: black"
+                            id="total-price"
+                            ><span id="myPrice"></span> THB</span
+                        >
+                    </p>
+                </div>
+                <h4 style="text-align: center">ชำระเงินผ่าน QR CODE</h4>
+                <div class="container">
+                    <img
+                        src="image/qrPayment.JPG"
+                        alt=""
+                        style="
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            width: 70%;
+                        "
+                    />
+                    <!-- Product details here -->
+                    <hr />
+                    <p
+                        class="submit-checkout d-flex flex-column align-items-center"
+                    >
+                        <label for="myFile">Upload slip here -></label>
+
+                        <button
+                            onclick="$('#myFile').trigger('click')"
+                            class="btn btn-outline-secondary"
+                        >
+                            Browse
+                        </button>
+
+                        <input
+                            onchange="imageUpload('someArgument')"
+                            type="file"
+                            style="display: none"
+                            id="myFile"
+                            name="slipFile"
+                            accept=".jpg, .jpeg, .png"
+                        />
+
+                        <img
+                            id="mySlip"
+                            src=""
+                            style="
+                                display: none;
+                                margin-left: auto;
+                                margin-right: auto;
+                                width: 70%;
+                            "
+                        />
+                        <button
+                            onclick="submit()"
+                            class="btn btn-outline-success"
+                        >
+                            ยืนยันการชำระเงิน
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="md_edit"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                แก้ไขสินค้า
+                            </h5>
+                            <h6 class="modal-title" id="ed_name"></h6>
+                        </div>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <input
+                            id="ed_count"
+                            type="number"
+                            class="form-control"
+                            placeholder="xxxx"
+                        />
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            id="btn_closemd"
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            ยกเลิก
+                        </button>
+                        <button
+                            onclick="saveDraft()"
+                            type="button"
+                            class="btn btn-primary"
+                        >
+                            บันทึก
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+
+        <script>
+            var urlx = new URL(window.location.href)
+            const fromx = urlx.searchParams.get("from")
+            var finalCart
+
+            var payment = 0
+            $(document).ready(() => {
+                if (fromx && fromx == "2") {
+                    $("#txt_shopimg").attr("src", "image/souvenir.png")
+                    $("#txt_shopname").text("PIM SOUVENIR SHOP")
+                    finalCart = JSON.parse(localStorage.myCart2)
+                    var myPrice = 0
+                    for (let i = 0; i < finalCart.length; i++) {
+                        const element = finalCart[i]
+                        myPrice += element.netAmount
+                    }
+                    payment = numberWithCommas(myPrice.toFixed(2))
+                    $("#myItems").text(finalCart.length)
+                    $("#myPrice").text(payment)
+
+                    var html = ""
+                    if (finalCart.length > 0) {
+                        for (let i = 0; i < finalCart.length; i++) {
+                            const element = finalCart[i]
+                            html += `
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                  <div>[x${element.count}] ${element.name}</div>
+                  <div>${element.netAmount.toFixed(2)} THB</div>
+              </div>
+              <div class="d-flex align-items-center">
+                <button onclick="getInfo(${i})" class="btn btn-warning me-1" data-bs-toggle="modal" data-bs-target="#md_edit">แก้ไข</button>
+                <button onclick="removeInfo(${i})" class="btn btn-danger">ลบ</button>
+              </div>
+            </div>
+              `
+                        }
+                    }
+                    $("#renderFinalCart").html(html)
+                } else {
+                    $("#txt_shopimg").attr("src", "image/smart2.jpg")
+                    $("#txt_shopname").text("PIM SMART SHOP")
+                    finalCart = JSON.parse(localStorage.myCart)
+                    var myPrice = 0
+                    for (let i = 0; i < finalCart.length; i++) {
+                        const element = finalCart[i]
+                        myPrice += element.netAmount
+                    }
+                    payment = numberWithCommas(myPrice.toFixed(2))
+                    $("#myItems").text(finalCart.length)
+                    $("#myPrice").text(payment)
+
+                    var html = ""
+                    if (finalCart.length > 0) {
+                        for (let i = 0; i < finalCart.length; i++) {
+                            const element = finalCart[i]
+                            html += `
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between">
+                  <div>[x${element.count}] ${element.name}</div>
+                  <div>${element.netAmount.toFixed(2)} THB</div>
+              </div>
+              <div class="d-flex align-items-center">
+                <button onclick="getInfo(${i})" class="btn btn-warning me-1" data-bs-toggle="modal" data-bs-target="#md_edit">แก้ไข</button>
+                <button onclick="removeInfo(${i})" class="btn btn-danger">ลบ</button>
+              </div>
+            </div>`
+                        }
+                    }
+                    $("#renderFinalCart").html(html)
+                }
+            })
+            function getInfo(i) {
+                const info = finalCart[i]
+                itemsIndex = i
+                $("#ed_name").text(info.name)
+                $("#ed_count").val(info.count)
+            }
+            function removeInfo(i) {
+                const info = finalCart[i]
+
+                Swal.fire({
+                    icon: "warning",
+                    title: "ยืนยันการลบ ?",
+                    text: info.name,
+                    showConfirmButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: "ยืนยัน",
+                    cancelButtonText: "ยกเลิก",
+                }).then((res) => {
+                    if (res.isConfirmed) {
+                        $("#btn_closemd").click()
+                        finalCart.splice(i, 1)
+                        console.log(finalCart)
+
+                        if (fromx && fromx == "2") {
+                            localStorage.setItem(
+                                "myCart2",
+                                JSON.stringify(finalCart)
+                            )
+                        } else {
+                            localStorage.setItem(
+                                "myCart",
+                                JSON.stringify(finalCart)
+                            )
+                        }
+                        window.location.reload()
+                    }
+                })
+            }
+            var itemsIndex = 0
+            function saveDraft() {
+                $("#ed_count").removeClass("is-invalid")
+                if (parseInt($("#ed_count").val()) <= 0) {
+                    $("#ed_count").addClass("is-invalid")
+                } else {
+                    var count = parseInt($("#ed_count").val())
+                    finalCart[itemsIndex].count = count
+                    finalCart[itemsIndex].netAmount =
+                        count * finalCart[itemsIndex].amount
+                    if (fromx && fromx == "2") {
+                        localStorage.setItem(
+                            "myCart2",
+                            JSON.stringify(finalCart)
+                        )
+                    } else {
+                        localStorage.setItem(
+                            "myCart",
+                            JSON.stringify(finalCart)
+                        )
+                    }
+                    window.location.reload()
+                }
+            }
+            function numberWithCommas(x) {
+                x = x.toString()
+                var pattern = /(-?\d+)(\d{3})/
+                while (pattern.test(x)) x = x.replace(pattern, "$1,$2")
+                return x
+            }
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader()
+                    reader.onload = function (e) {
+                        $("#mySlip").attr("src", e.target.result)
+                        $("#mySlip").css("display", "block")
+                    }
+                    reader.readAsDataURL(input.files[0])
+                }
+            }
+            $("#myFile").change(function () {
+                readURL(this)
+            })
+            function submit() {
+                console.log("Submit function is called")
+
+                $("#name").removeClass("is-invalid")
+                $("#email").removeClass("is-invalid")
+                $("#adr").removeClass("is-invalid")
+                $("#city").removeClass("is-invalid")
+                $("#state").removeClass("is-invalid")
+                $("#zip").removeClass("is-invalid")
+
+                let isValid = true
+
+                if ($("#name").val().length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดระบุชื่อ",
+                    })
+                    $("#name").addClass("is-invalid")
+                    isValid = false
+                } else if ($("#phoneNumber").val().length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดระบุเบอร์มือถือ",
+                    })
+                    $("#email").addClass("is-invalid")
+                    isValid = false
+                } else if ($("#email").val().length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดระบุอีเมล",
+                    })
+                    $("#email").addClass("is-invalid")
+                    isValid = false
+                } else if ($("#adr").val().length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดระบุที่อยู่",
+                    })
+                    $("#adr").addClass("is-invalid")
+                    isValid = false
+                } else if ($("#city").val().length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดระบุอำเภอ/เขต",
+                    })
+                    $("#city").addClass("is-invalid")
+                    isValid = false
+                } else if ($("#state").val().length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดระบุจังหวัด",
+                    })
+                    $("#state").addClass("is-invalid")
+                    isValid = false
+                } else if ($("#zip").val().length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดระบุรหัสไปษณีย์",
+                    })
+                    $("#zip").addClass("is-invalid")
+                    isValid = false
+                } else if ($("#mySlip").attr("src").length <= 0) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "โปรดอัพโหลดสลิป",
+                    })
+                    isValid = false
+                } else {
+                    Swal.fire({
+                        icon: "info",
+                        title: "ยืนยันการสั่งซื้อสินค้า",
+                        text: `รวมทั้งสิ้น ${payment} บาท`,
+                        showConfirmButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: "ยืนยัน",
+                        cancelButtonText: "ยกเลิก",
+                    }).then((res) => {
+                        if (res.isConfirmed) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "สำเร็จ",
+                                timer: 2000,
+                            }).then(() => {
+                                if (fromx && fromx == "2") {
+                                    localStorage.removeItem("myCart2")
+                                    window.location.href =
+                                        "./souvenir/uniformAccessory.html"
+                                } else {
+                                    localStorage.removeItem("myCart")
+                                    window.location.href =
+                                        "./Category/electricAppliance.html"
+                                }
+                            })
+                        }
+                    })
+                    sendEmail()
+                    createOrder()
+                    isValid = false
+                }
+
+                if (isValid) {
+                    uploadSlip()
+                }
+            }
+            function goBack() {
+                window.history.back()
+            }
+
+            function createOrder() {
+                const email = document.getElementById("email").value
+                const name = document.getElementById("name").value
+                const address = document.getElementById("adr").value
+                const city = document.getElementById("city").value
+                const state = document.getElementById("state").value
+                const zip = document.getElementById("zip").value
+
+                const customerInfo = {
+                    email: email,
+                    name: name,
+                    address: address,
+                    city: city,
+                    state: state,
+                    zip: zip,
+                }
+
+                console.log(customerInfo)
+
+                fetch("http://localhost:4000/api/create-order", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(customerInfo),
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Network response was not ok")
+                        }
+                        return response.json()
+                    })
+                    .then((data) => {
+                        console.log("Success:", data)
+                        alert("Order created successfully!")
+                        document.getElementById("orderForm").reset()
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error)
+                        alert("Error occurred while creating order!")
+                    })
+            }
+
+            function sendEmail() {
+                const email = $("#email").val()
+                const name = $("#name").val()
+                const address = $("#adr").val()
+                const city = $("#city").val()
+                const state = $("#state").val()
+                const zip = $("#zip").val()
+
+                const textContent = `Dear, ${name}\nYour payment has been confirmed. Thank you for your purchase!
+                <p>ที่อยู่ของคุณ</p>
+                ${address}, ${city}, ${state}, ${zip}`
+
+                const data = {
+                    to: email,
+                    subject: "Confirmation of Payment",
+                    text: textContent,
+                }
+                fetch("http://localhost:4000/send-email", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                })
+                    .then((response) => response.json())
+                    .then((result) => {
+                        if (result.success) {
+                            console.log(result.message)
+                        } else {
+                            console.error(result.message)
+                        }
+                    })
+                    .catch((error) => console.error(error))
+            }
+
+            function uploadSlip(argument) {
+                const formData = new FormData()
+                const slipFileInput = document.getElementById("myFile")
+
+                if (slipFileInput.files.length > 0) {
+                    formData.append("image", slipFileInput.files[0])
+                    formData.append("argument", argument)
+
+                    fetch("http://localhost:4000/upload-image", {
+                        method: "POST",
+                        body: formData,
+                    })
+                        .then((response) => response.json())
+                        .then((data) => console.log("Slip uploaded:", data))
+                        .catch((error) =>
+                            console.error("Error uploading slip:", error)
+                        )
+                }
+            }
+
+            function imageUpload(argument) {
+                uploadSlip(argument)
+            }
+        </script>
+    </body>
+</html>

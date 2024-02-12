@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var products
+            fetch("http://localhost:4000/products", {
+                method: "GET",
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log("Product:", data.products)
+                    products = data.products
+                    console.log(products[9].name)
+                })
+                .catch((error) => console.error("Error uploading slip:", error))
+        </script>
+    </body>
+</html>

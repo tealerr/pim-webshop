@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container mt-4">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-success">
+                    <tr>
+                        <th>Email</th>
+                        <th>เบอร์โทรศัพท์</th>
+                        <th>ชื่อ-นามสกุล</th>
+                        <th>ที่อยู่</th>
+                        <th>อำเภอ</th>
+                        <th>จังหวัด</th>
+                        <th>รหัสไปรษณีย์</th>
+                        <th>รูปสลิปโอนเงิน</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table-body"></tbody>
+            </table>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" id="pagination"></ul>
+            </nav>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const itemsPerPage = 10
+
+                async function fetchDataFromMongoDB() {
+                    try {
+                        const response = await fetch(
+                            "http://localhost:4000/api/customer-info"
+                        )
+                        const data = await response.json()
+
+                        // Update the table with the retrieved data
+                        updateTable(data)
+                        // Add pagination
+                        addPagination(data.length)
+                    } catch (error) {
+                        console.error("Error fetching data:", error)
+                    }
+                }
+
+                // Function to update the table with data
+                function updateTable(response) {
+                    const data = response.detail // Access the detail property of the response
+                    const tableBody = document.getElementById("data-table-body")
+
+                    tableBody.innerHTML = "" // Clear previous data
+
+                    data.forEach((item) => {
+                        const newRow = document.createElement("tr")
+
+                        // Create and append cells for each data field
+                        const emailCell = document.createElement("td")
+                        emailCell.textContent = item.email
+                        newRow.appendChild(emailCell)
+
+                        const phoneNumberCell = document.createElement("td")
+                        phoneNumberCell.textContent = item.phoneNumber
+                        newRow.appendChild(phoneNumberCell)
+
+                        const nameCell = document.createElement("td")
+                        nameCell.textContent = item.name
+                        newRow.appendChild(nameCell)
+
+                        const addressCell = document.createElement("td")
+                        addressCell.textContent = item.address
+                        newRow.appendChild(addressCell)
+
+                        const cityCell = document.createElement("td")
+                        cityCell.textContent = item.city
+                        newRow.appendChild(cityCell)
+
+                        const stateCell = document.createElement("td")
+                        stateCell.textContent = item.state
+                        newRow.appendChild(stateCell)
+
+                        const zipCell = document.createElement("td")
+                        zipCell.textContent = item.zip
+                        newRow.appendChild(zipCell)
+
+                        // Create an image cell and append it to the row
+                        const imageCell = document.createElement("td")
+                        imageCell.innerHTML = `<img src="${item.image}" alt="Slip">`
+                        newRow.appendChild(imageCell)
+
+                        // Append the row to the table
+                        tableBody.appendChild(newRow)
+                    })
+                }
+
+                // Function to add pagination
+                function addPagination(totalItems) {
+                    const pagination = document.getElementById("pagination")
+                    pagination.innerHTML = ""
+
+                    const totalPages = Math.ceil(totalItems / itemsPerPage)
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement("li")
+                        li.classList.add("page-item")
+                        const a = document.createElement("a")
+                        a.classList.add("page-link")
+                        a.href = "#"
+                        a.textContent = i
+                        a.addEventListener("click", () => {
+                            // Fetch data for the selected page
+                            fetchPageData(i)
+                        })
+                        li.appendChild(a)
+                        pagination.appendChild(li)
+                    }
+                }
+
+                // Function to fetch data for a specific page
+                async function fetchPageData(pageNumber) {
+                    try {
+                        const response = await fetch(
+                            `http://localhost:4000/api/customer-info?page=${pageNumber}`
+                        )
+                        const data = await response.json()
+
+                        // Update the table with the retrieved data
+                        updateTable(data)
+                    } catch (error) {
+                        console.error("Error fetching data:", error)
+                    }
+                }
+
+                fetchDataFromMongoDB()
+            })
+        </script>
+    </body>
+</html>
