@@ -1,0 +1,16 @@
+{
+    "hosting": [{
+            "target": "blog",
+            "public": "blog/dist"
+        },
+        {
+            "target": "app",
+            "public": "app/dist",
+            "rewrites": []
+        }
+    ],
+    "storage": [{
+        "target": "main",
+        "rules": "storage.main.rules"
+    }]
+}
