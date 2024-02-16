@@ -43,10 +43,10 @@ $("header").html(`
                             <li>
                                 <a>หมวดหมู่สินค้า</a>
                                 <ul>
-                                    <li><a href="../uniformAccessory.html">อุปกรณ์ชุดนักศึกษา</a></li>
-                                    <li><a href="../poloAndTshirt.html">เสื้อโปโลและเสื้อยืด</a></li>
-                                    <li><a href="../hoodAndLongShirt.html">เสื้อฮู้ดและเสื้อแขนยาว</a></li>
-                                    <li><a href="../giftBasket.html">กระเช้าของขวัญ</a></li>
+                                    <li><a href="../souvenir/uniformAccessory.html">อุปกรณ์ชุดนักศึกษา</a></li>
+                                    <li><a href="../souvenir/poloAndTshirt.html">เสื้อโปโลและเสื้อยืด</a></li>
+                                    <li><a href="../souvenir/hoodAndLongShirt.html">เสื้อฮู้ดและเสื้อแขนยาว</a></li>
+                                    <li><a href="../souvenir/giftBasket.html">กระเช้าของขวัญ</a></li>
                                 </ul>
                             </li>
                             <li>

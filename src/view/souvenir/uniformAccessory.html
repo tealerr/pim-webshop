@@ -119,26 +119,39 @@
                 const element = productMaster.student.lamlong[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
                     html += `
-                <div class="s-12 m-6 l-4 xl-3 xxl-3">
-    <div class="card">
-        <a href="#">
-            <img class="card-img" src="${element.img2}" alt="${element.name}" />
-        </a>
-        <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="#" class="card-title">
-                <h4>
-                    <strong>${element.name}</strong>
-                </h4>
-            </a>
-            <div class="card-action" style="margin-top: 10px;">
-                <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn">
-                    Add to Cart
-                </button>
-            </div>
+                    <div class="s-12 m-12 l-4 xl-3 xxl-3">
+  <div class="card">
+    <a href="">
+      <img
+        class="full-img card-img"
+        src="${element.img}"
+        alt="${element.name}"
+      />
+    </a>
+    <div class="card-content">
+      <h5 class="card-price">
+        ${numberWithCommas((element.price).toFixed(2))} บาท
+      </h5>
+      <a href="/" class="card-title margin-bottom">
+        <h5>
+          <strong>${element.name}</strong>
+        </h5>
+      </a>
+      <p class="margin-bottom"></p>
+      <div class="customform s-12 margin-bottom2x">
+        <div>
+          <button
+            onclick="addCart(${element.id})"
+            class="button rounded-btn submit-btn s-12"
+          >
+            Add to Cart
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 `;
                 }
             }
@@ -146,26 +159,39 @@
                 const element = productMaster.student.man[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
                     html += `
-                <div class="s-12 m-6 l-4 xl-3 xxl-3">
-    <div class="card">
-        <a href="#">
-            <img class="card-img" src="${element.img2}" alt="${element.name}" />
-        </a>
-        <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="#" class="card-title">
-                <h4>
-                    <strong>${element.name}</strong>
-                </h4>
-            </a>
-            <div class="card-action" style="margin-top: 10px;">
-                <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn">
-                    Add to Cart
-                </button>
-            </div>
+                    <div class="s-12 m-6 l-4 xl-3 xxl-3">
+  <div class="card">
+    <a href="">
+      <img
+        class="full-img card-img"
+        src="${element.img}"
+        alt="${element.name}"
+      />
+    </a>
+    <div class="card-content">
+      <h5 class="card-price">
+        ${numberWithCommas((element.price).toFixed(2))} บาท
+      </h5>
+      <a href="/" class="card-title margin-bottom">
+        <h4>
+          <strong>${element.name}</strong>
+        </h4>
+      </a>
+      <p class="margin-bottom"></p>
+      <div class="customform s-12 margin-bottom2x">
+        <div>
+          <button
+            onclick="addCart(${element.id})"
+            class="button rounded-btn submit-btn s-12"
+          >
+            Add to Cart
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 `;
                 }
             }
@@ -173,26 +199,39 @@
                 const element = productMaster.student.women[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
                     html += `
-                <div class="s-12 m-6 l-4 xl-3 xxl-3">
-    <div class="card">
-        <a href="#">
-            <img class="card-img" src="${element.img2}" alt="${element.name}" />
-        </a>
-        <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="#" class="card-title">
-                <h4>
-                    <strong>${element.name}</strong>
-                </h4>
-            </a>
-            <div class="card-action" style="margin-top: 10px;">
-                <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn">
-                    Add to Cart
-                </button>
-            </div>
+                    <div class="s-12 m-6 l-4 xl-3 xxl-3">
+  <div class="card">
+    <a href="">
+      <img
+        class="full-img card-img"
+        src="${element.img}"
+        alt="${element.name}"
+      />
+    </a>
+    <div class="card-content">
+      <h5 class="card-price">
+        ${numberWithCommas((element.price).toFixed(2))} บาท
+      </h5>
+      <a href="/" class="card-title margin-bottom">
+        <h4>
+          <strong>${element.name}</strong>
+        </h4>
+      </a>
+      <p class="margin-bottom"></p>
+      <div class="customform s-12 margin-bottom2x">
+        <div>
+          <button
+            onclick="addCart(${element.id})"
+            class="button rounded-btn submit-btn s-12"
+          >
+            Add to Cart
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 `;
                 }
             }
@@ -201,28 +240,38 @@
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
                 html += `
                 <div class="s-12 m-6 l-4 xl-3 xxl-3">
-    <div class="card">
-        <a href="">
-            <img class="card-img" src="${element.img}" alt="${element.name}" />
-        </a>
-        <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="/">
-                <h4 class="card-title margin-bottom">
-                    <strong>${element.name}</strong>
-                </h4>
-            </a>
-            <p class="margin-bottom"></p>
-            <div class="customform s-12 margin-bottom2x" style="margin-top: 10px;">
-                <div>
-                    <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12">
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
+  <div class="card">
+    <a href="">
+      <img
+        class="full-img card-img"
+        src="${element.img}"
+        alt="${element.name}"
+      />
+    </a>
+    <div class="card-content">
+      <h5 class="card-price">
+        ${numberWithCommas((element.price).toFixed(2))} บาท
+      </h5>
+      <a href="/" class="card-title margin-bottom">
+        <h4>
+          <strong>${element.name}</strong>
+        </h4>
+      </a>
+      <p class="margin-bottom"></p>
+      <div class="customform s-12 margin-bottom2x">
+        <div>
+          <button
+            onclick="addCart(${element.id})"
+            class="button rounded-btn submit-btn s-12"
+          >
+            Add to Cart
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 `;
                 }
             }
@@ -231,25 +280,38 @@
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
                 html += `
                 <div class="s-12 m-6 l-4 xl-3 xxl-3">
-    <div class="card">
-        <a href="#">
-            <img class="card-img" src="${element.img}" alt="${element.name}" />
-        </a>
-        <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="#" class="card-title">
-                <h4>
-                    <strong>${element.name}</strong>
-                </h4>
-            </a>
-            <div class="card-action" style="margin-top: 10px;">
-                <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn">
-                    Add to Cart
-                </button>
-            </div>
+  <div class="card">
+    <a href="">
+      <img
+        class="full-img card-img"
+        src="${element.img}"
+        alt="${element.name}"
+      />
+    </a>
+    <div class="card-content">
+      <h5 class="card-price">
+        ${numberWithCommas((element.price).toFixed(2))} บาท
+      </h5>
+      <a href="/" class="card-title margin-bottom">
+        <h4>
+          <strong>${element.name}</strong>
+        </h4>
+      </a>
+      <p class="margin-bottom"></p>
+      <div class="customform s-12 margin-bottom2x">
+        <div>
+          <button
+            onclick="addCart(${element.id})"
+            class="button rounded-btn submit-btn s-12"
+          >
+            Add to Cart
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 `;
                 }
             }
@@ -258,28 +320,38 @@
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
                 html += `
                 <div class="s-12 m-6 l-4 xl-3 xxl-3">
-    <div class="card">
-        <a href="">
-            <img class="full-img card-img" src="${element.img}" alt="${element.name}" />
-        </a>
-        <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="/" class="card-title margin-bottom">
-                <h4>
-                    <strong>${element.name}</strong>
-                </h4>
-            </a>
-            <p class="margin-bottom"></p>
-            <div class="customform s-12 margin-bottom2x">
-                <div>
-                    <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12">
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
+  <div class="card">
+    <a href="">
+      <img
+        class="full-img card-img"
+        src="${element.img}"
+        alt="${element.name}"
+      />
+    </a>
+    <div class="card-content">
+      <h5 class="card-price">
+        ${numberWithCommas((element.price).toFixed(2))} บาท
+      </h5>
+      <a href="/" class="card-title margin-bottom">
+        <h4>
+          <strong>${element.name}</strong>
+        </h4>
+      </a>
+      <p class="margin-bottom"></p>
+      <div class="customform s-12 margin-bottom2x">
+        <div>
+          <button
+            onclick="addCart(${element.id})"
+            class="button rounded-btn submit-btn s-12"
+          >
+            Add to Cart
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 `;
                 }
             }

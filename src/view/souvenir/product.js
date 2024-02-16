@@ -24,17 +24,17 @@ const productMaster = {
             },
             {
                 id: 4,
-                name: "../เข็มขัด",
+                name: "เข็มขัด",
                 img: "../../image/souvenir/เครื่องแบบการบิน/เข็มขัด.jpg",
                 img2: "../image/souvenir/เครื่องแบบการบิน/เข็มขัด.jpg",
                 price: 120,
             },
             {
                 id: 5,
-                name: "../เข็มขัด",
+                name: "อินธนู",
                 img: "../../image/souvenir/เครื่องแบบการบิน/อินธนู.jpg",
                 img2: "../image/souvenir/เครื่องแบบการบิน/อินธนู.jpg",
-                price: 120,
+                price: 175,
             },
         ],
         man: [

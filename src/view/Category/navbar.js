@@ -31,12 +31,12 @@ $("header").html(`
                             <li>
                                 <a>หมวดหมู่สินค้า</a>
                                 <ul>
-                                    <li><a href="page/Category/electricAppliance.html">เครื่องใช้ไฟฟ้า</a></li>
-                                    <li><a href="page/Category/2handclothes.html">เสื้อผ้ามือสอง</a></li>
-                                    <li><a href="page/Category/consumerGoods.html">เครื่องอุปโภคบริโภค</a></li>
-                                    <li><a href="page/Category/giftShop.html">กิ๊บช็อป</a></li>
-                                    <li><a href="page/Category/bagAndShoes.html">กระเป๋าและรองเท้า</a></li>
-                                    <li><a href="page/Category/stationery.html">เครื่องเขียน</a></li>
+                                    <li><a href="./electricAppliance.html">เครื่องใช้ไฟฟ้า</a></li>
+                                    <li><a href="./2handclothes.html">เสื้อผ้ามือสอง</a></li>
+                                    <li><a href="./consumerGoods.html">เครื่องอุปโภคบริโภค</a></li>
+                                    <li><a href="./giftShop.html">กิ๊บช็อป</a></li>
+                                    <li><a href="./bagAndShoes.html">กระเป๋าและรองเท้า</a></li>
+                                    <li><a href="./stationery.html">เครื่องเขียน</a></li>
                                 </ul>
                             </li>
                             <li>
