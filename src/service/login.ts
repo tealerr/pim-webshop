@@ -44,7 +44,15 @@ export async function login(req: Request, res: Response) {
                     console.error("Token not generated")
                     return res.status(500).json({ message: "Server error" })
                 }
+                // Store token in local storage
                 res.json({ token })
+
+                // Set token in local storage
+                if (token) {
+                    // In the browser, localStorage is available
+                    // So, you can set the token in local storage
+                    localStorage.setItem("jwtToken", token)
+                }
             }
         )
     } catch (error) {

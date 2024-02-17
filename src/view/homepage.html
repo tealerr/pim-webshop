@@ -11,6 +11,18 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous"
         />
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // เช็ค JWT ใน Local Storage
+                const jwtToken = localStorage.getItem("jwtToken")
+
+                if (!jwtToken) {
+                    // หากไม่มี token ใน Local Storage
+                    alert("กรุณาเข้าสู่ระบบเพื่อเข้าถึงหน้านี้")
+                    window.location.href = "login.html" // พากลับไปยังหน้า login.html
+                }
+            })
+        </script>
     </head>
 
     <body>
@@ -35,7 +47,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav"></div>
+                <div class="navbar-nav ml-auto">
+                    <!-- ส่วนของเมนู Dashboard จะถูกเพิ่มที่นี่ หากผู้ใช้เป็น "admin" -->
+                </div>
             </div>
         </nav>
 
@@ -88,5 +102,36 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"
         ></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // เช็ค JWT ใน Local Storage
+                const jwtToken = localStorage.getItem("jwtToken")
+
+                if (jwtToken) {
+                    // Decode JWT Token เพื่อให้ได้ข้อมูล payload
+                    const decodedToken = jwt.decode(jwtToken)
+
+                    // เช็คว่ามี username เป็น "admin" หรือไม่
+                    if (
+                        decodedToken &&
+                        decodedToken.user &&
+                        decodedToken.user.username === "admin"
+                    ) {
+                        // แสดงเมนู "dashboard" ใน navbar
+                        const navbar = document.querySelector(
+                            ".navbar-nav.ml-auto"
+                        )
+                        if (navbar) {
+                            const dashboardLink = document.createElement("a")
+                            dashboardLink.className = "nav-link active"
+                            dashboardLink.href = "dashboard.html"
+                            dashboardLink.textContent = "Dashboard"
+                            navbar.appendChild(dashboardLink)
+                        }
+                    }
+                }
+            })
+        </script>
     </body>
 </html>

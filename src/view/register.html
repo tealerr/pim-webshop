@@ -37,17 +37,19 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="index.html">
                         Home
                         <span class="sr-only">(current)</span>
                     </a>
-                    <a class="nav-item nav-link" href="login.html">Login</a>
-                    <a class="nav-item nav-link" href="register.html"
+                    <a class="nav-item nav-link active" href="login.html"
+                        >Login</a
+                    >
+                    <a class="nav-item nav-link active" href="register.html"
                         >Sign up</a
                     >
                     <a
-                        class="nav-item nav-link"
+                        class="nav-item nav-link active"
                         href="https://www.facebook.com/shopforpimsmart"
                         target="blank"
                         >Help</a
@@ -55,6 +57,19 @@
                 </div>
             </div>
         </nav>
+
+        <div class="image-poster">
+            <img
+                class="image-poster img-regis-1"
+                src="image/regis_1.png"
+                alt=""
+            />
+            <img
+                class="image-poster img-regis-2"
+                src="image/regis_2.png"
+                alt=""
+            />
+        </div>
         <form id="registrationForm">
             <label for="username">Username:</label>
             <input type="text" id="username" required />
@@ -71,15 +86,21 @@
             <br />
             <br />
 
-            <button
-                type="button"
-                class="btn btn-success"
-                id="registerButton"
-                onclick="registerUser()"
-            >
-                SIGN UP
-            </button>
+            <div style="text-align: center">
+                <button
+                    type="submit"
+                    class="btn btn-success w-100"
+                    id="registerButton"
+                    onclick="registerUser()"
+                >
+                    SIGN UP
+                </button>
+            </div>
         </form>
+
+        <footer>
+            <img id="footage_image" src="image/footage_wave.png" alt="" />
+        </footer>
 
         <p id="registrationMessage"></p>
 
@@ -93,11 +114,7 @@
                 const password = document.getElementById("password").value
 
                 if (!username || !email || !password) {
-                    const errorMessage = document.getElementById(
-                        "registrationMessage"
-                    )
-                    errorMessage.innerText = "Please fill in all fields."
-                    errorMessage.classList.add("yellow")
+                    alert("โปรดกรอกข้อมูลให้ครบถ้วน")
                     return
                 }
 
@@ -110,33 +127,68 @@
                 })
                     .then((response) => response.json())
                     .then((data) => {
-                        // Display registration message
+                        const registrationMessage = document.getElementById(
+                            "registrationMessage"
+                        )
+
                         if (data.message === "Registration successful") {
-                            document.getElementById(
-                                "registrationMessage"
-                            ).innerText = "Registration successful!"
-                            document
-                                .getElementById("registrationMessage")
-                                .classList.remove("yellow") // Remove yellow color class
+                            registrationMessage.innerText =
+                                "Registration successful!"
+                            registrationMessage.classList.remove("green-text")
+                            registrationMessage.classList.add("yellow-text")
                         } else {
-                            document.getElementById(
-                                "registrationMessage"
-                            ).innerText = "Registration failed."
-                            document
-                                .getElementById("registrationMessage")
-                                .classList.remove("yellow") // Remove yellow color class
+                            registrationMessage.innerText =
+                                "Registration failed."
+                            registrationMessage.classList.remove("yellow-text")
+                            registrationMessage.classList.add("green-text")
                         }
                     })
                     .catch((error) => {
                         console.error("Error:", error)
-                        document.getElementById(
+                        const registrationMessage = document.getElementById(
                             "registrationMessage"
-                        ).innerText = "Registration failed."
-                        document
-                            .getElementById("registrationMessage")
-                            .classList.remove("yellow") // Remove yellow color class
+                        )
+                        registrationMessage.innerText = "Registration failed."
+                        registrationMessage.classList.remove("green-text")
+                        registrationMessage.classList.add("red-text")
                     })
             }
+        </script>
+
+        <script>
+            const form = document.getElementById("registrationForm")
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault()
+
+                const username = document
+                    .getElementById("username")
+                    .value.trim()
+                const email = document.getElementById("email").value.trim()
+                const password = document
+                    .getElementById("password")
+                    .value.trim()
+
+                // Regular expressions for validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
+
+                // Validate email
+                if (!emailRegex.test(email)) {
+                    alert("Invalid email format")
+                    return
+                }
+
+                // Validate password
+                if (!passwordRegex.test(password)) {
+                    alert(
+                        "Password must be 6-20 characters long and contain at least one digit, one lowercase letter, and one uppercase letter"
+                    )
+                    return
+                }
+
+                this.submit()
+            })
         </script>
     </body>
 </html>

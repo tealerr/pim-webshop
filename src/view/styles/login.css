@@ -47,13 +47,72 @@ button:hover {
 
 #login-form {
     position: absolute;
-    right: 0px;
+    right: 10%;
+    top: 20%;
     max-width: 400px;
     margin: 0 auto;
     background-color: #fff;
-    padding: 100px;
+    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    display: flex;
+    text-align: center;
+}
+
+#footage_image {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 20%;
+}
+
+.image-poster {
+    position: relative;
+    display: flex;
+    width: 75%;
+    height: 80%;
+}
+
+.img-login-1 {
+    position: absolute;
+    display: inline;
+    left: 8%;
+    top: 0%;
+    width: 555px;
+    height: 247px;
+    text-align: center;
+}
+
+.img-login-2 {
+    position: absolute;
+    display: inline;
+    left: 2.5%;
+    bottom: 12.5%;
+    width: 555px;
+    height: 247px;
+    text-align: center;
+}
+
+.fac {
+    width: 166.4px;
+    height: 123.5px;
+}
+
+.fac-1 {
+    position: absolute;
+    display: inline;
+    left: 50.5%;
+    bottom: 32.5%;
+}
+
+.fac-2 {
+    position: absolute;
+    display: inline;
+    left: 50.5%;
+    bottom: 12.5%;
 }
 
 .error-message {
