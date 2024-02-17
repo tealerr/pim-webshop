@@ -14,7 +14,7 @@ $("header").html(`
         <!-- TOP NAV -->
         <div class="line">
             <div style="height: 30px; background: #28a745; padding-top: 10px; padding-right: 30px;">
-                <a href="checkout.html?cartCount=0&totalPrice=0.00&from=2" id="cart-link" onclick="addToCart()">
+                <a href="../checkout.html?cartCount=0&totalPrice=0.00&from=2" id="cart-link" onclick="addToCart()">
                     <p id="renderCart" class="right cart" style="color: #fff;">
                         <i class="fa fa-shopping-cart" style=" font-size:24px; color: #fff;"></i>
                         <b id=" cart-count" style="color: #fff">${
@@ -39,7 +39,7 @@ $("header").html(`
                     </div>
                     <div style="display:flex; align-items: center; margin-right: 10px;">
                         <ul class="right">
-                            <li><a href="../../homepage.html">หน้าหลัก</a></li>
+                            <li><a href="../homepage.html">หน้าหลัก</a></li>
                             <li>
                                 <a>หมวดหมู่สินค้า</a>
                                 <ul>

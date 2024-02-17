@@ -539,6 +539,7 @@
                             Swal.fire({
                                 icon: "success",
                                 title: "สำเร็จ",
+                                text: "หากสินค้าชำรุดสามารถคืนได้ภายใน 7 วัน โดยการถ่ายรูปและวีดิโอ เพื่อเป็นการยืนยันว่าสินค้าเสียหาย",
                                 timer: 2000,
                             }).then(() => {
                                 if (fromx && fromx == "2") {
@@ -555,6 +556,7 @@
                     })
                     sendEmail()
                     createOrder()
+                    checkout()
                     isValid = false
                 }
 
@@ -644,28 +646,43 @@
                     .catch((error) => console.error(error))
             }
 
-            function uploadSlip(argument) {
-                const formData = new FormData()
-                const slipFileInput = document.getElementById("myFile")
-
-                if (slipFileInput.files.length > 0) {
-                    formData.append("image", slipFileInput.files[0])
-                    formData.append("argument", argument)
-
-                    fetch("http://localhost:4000/upload-image", {
-                        method: "POST",
-                        body: formData,
-                    })
-                        .then((response) => response.json())
-                        .then((data) => console.log("Slip uploaded:", data))
-                        .catch((error) =>
-                            console.error("Error uploading slip:", error)
-                        )
+            function checkout() {
+                var productIds = []
+                var quantities = []
+                var productItems =
+                    document.getElementsByClassName("product-item")
+                for (var i = 0; i < productItems.length; i++) {
+                    var productId =
+                        productItems[i].querySelector(".product-id").innerText
+                    var quantity =
+                        productItems[i].querySelector(
+                            ".product-quantity"
+                        ).innerText
+                    productIds.push(productId)
+                    quantities.push(quantity)
                 }
-            }
 
-            function imageUpload(argument) {
-                uploadSlip(argument)
+                var checkoutData = {
+                    productIds: productIds,
+                    quantities: quantities,
+                }
+
+                fetch("http://localhost:4000/checkout", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(checkoutData),
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Network response was not ok")
+                        }
+                        window.location.href = "/thank-you.html"
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error)
+                    })
             }
         </script>
     </body>
