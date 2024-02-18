@@ -5,30 +5,35 @@ const productMaster = {
             name: "กาต้มน้ำร้อน",
             img: "../image/product/electric/กาต้มน้ำ.jpg",
             price: 250,
+            qty: 15,
         },
         {
             id: 2,
             name: "เครื่องปั่นอเนกประสงค์",
             img: "../image/product/electric/เครื่องปั่น.jpg",
             price: 319,
+            qty: 2,
         },
         {
             id: 3,
             name: "หม้อหุงข้าว",
             img: "../image/product/electric/หม้อหุงข้าว.jpg",
             price: 350,
+            qty: 0,
         },
         {
             id: 4,
             name: "หม้อต้มไฟฟ้า",
             img: "../image/product/electric/หม้อต้มน้ำ.jpg",
             price: 499,
+            qty: 0,
         },
         {
             id: 5,
             name: "กระทะปิ้งย่างพร้อมหม้อต้ม",
             img: "../image/product/electric/เตาหมูทะ.jpg",
             price: 999,
+            qty: 13,
         },
     ],
     cloth: [
@@ -37,48 +42,56 @@ const productMaster = {
             name: "ชุดเดรสขาวลายดอกไม้",
             img: "../image/product/2HandClothes/ชุดเดรสขาวลายดอกไม้.jpg",
             price: 180,
+            qty: 10,
         },
         {
             id: 7,
             name: "ชุดเดรสชมพูลายดอกไม้",
             img: "../image/product/2HandClothes/ชุดเดรสชมพูลายดอกไม้.jpg",
             price: 200,
+            qty: 10,
         },
         {
             id: 8,
             name: "ชุดเดรสชมพูเข้มลายดอกไม้",
             img: "../image/product/2HandClothes/ชุดเดรสชมพูเข้มลายดอกไม้.jpg",
             price: 200,
+            qty: 10,
         },
         {
             id: 9,
             name: "เสื้อลายดอกพร้อมกระโปรง",
             img: "../image/product/2HandClothes/เสื้อลายดอกพร้อมกระโปรง.jpg",
             price: 250,
+            qty: 10,
         },
         {
             id: 10,
             name: "ชุดสูทพร้อมกางเกงชาย",
             img: "../image/product/2HandClothes/ชุดสูทพร้อมกางเกงชาย.jpg",
             price: 300,
+            qty: 10,
         },
         {
             id: 11,
             name: "เสื้อเอวลอยพร้อมกระโปรงยาว",
             img: "../image/product/2HandClothes/เสื้อเอวลอยพร้อมกระโปรงยาว.jpg",
             price: 350,
+            qty: 10,
         },
         {
             id: 12,
             name: "เสื้อสูทผู้ชายสีกรมเข้ม",
             img: "../image/product/2HandClothes/เสื้อสูทผู้ชายสีกรมเข้ม.jpg",
             price: 490,
+            qty: 10,
         },
         {
             id: 13,
             name: "ชุดสูทพร้อมกางเกงชายเป็นเซ็ต",
             img: "../image/product/2HandClothes/ชุดสูทพร้อมกางเกงชายเป็นเซ็ต.jpg",
             price: 599,
+            qty: 10,
         },
     ],
     food: [
@@ -87,36 +100,42 @@ const productMaster = {
             name: "นม Lactasoy",
             img: "../image/product/consumer/lactasoy.jpg",
             price: 10,
+            qty: 10,
         },
         {
             id: 15,
             name: "ผ้าอนามัย Elis",
             img: "../image/product/consumer/elis.jpg",
             price: 20,
+            qty: 10,
         },
         {
             id: 16,
             name: "เลย์รสสาหร่าย",
             img: "../image/product/consumer/lay.jpg",
             price: 25,
+            qty: 10,
         },
         {
             id: 17,
             name: "ยาหม่องเฌอเอม",
             img: "../image/product/consumer/balm.jpg",
             price: 25,
+            qty: 10,
         },
         {
             id: 18,
             name: "น้ำยาปรับผ้านุ่ม Fineline",
             img: "../image/product/consumer/fineline.jpg",
             price: 40,
+            qty: 10,
         },
         {
             id: 19,
             name: "น้ำสิงห์แพ็คใหญ่",
             img: "../image/product/consumer/waterPack.jpg",
             price: 60,
+            qty: 10,
         },
     ],
     giftshop: [
@@ -125,30 +144,35 @@ const productMaster = {
             name: "ยางมัดผมดำเส้นเล็ก",
             img: "../image/product/giftshop/blackRubber.jpg",
             price: 10,
+            qty: 10,
         },
         {
             id: 21,
             name: "ยางมัดผมแบบเกลียว",
             img: "../image/product/giftshop/spiral.jpg",
             price: 10,
+            qty: 10,
         },
         {
             id: 22,
             name: "กิ๊บดำแบบเล็ก",
             img: "../image/product/giftshop/กิ๊บเหล็ก.jpg",
             price: 20,
+            qty: 10,
         },
         {
             id: 23,
             name: "กิ๊บดำแบบบาน",
             img: "../image/product/giftshop/กิ๊บใหญ่.jpg",
             price: 20,
+            qty: 10,
         },
         {
             id: 24,
             name: "โบว์ดำ",
             img: "../image/product/giftshop/blackRibbin.jpg",
             price: 30,
+            qty: 10,
         },
     ],
     shoe: [
@@ -157,48 +181,56 @@ const productMaster = {
             name: "รองเท้าคัดชูหญิง",
             img: "../image/product/bagAndShoes/womenCutshoes.jpg",
             price: 299,
+            qty: 10,
         },
         {
             id: 26,
             name: "รองเท้าผ้าใบดำด้าน",
             img: "../image/product/bagAndShoes/runShoes.jpg",
             price: 299,
+            qty: 10,
         },
         {
             id: 27,
             name: "รองเท้าคัดชูชาย",
             img: "../image/product/bagAndShoes/menCutShoes.jpg",
             price: 350,
+            qty: 10,
         },
         {
             id: 28,
             name: "กระเป๋ามือสองโทนม่วงเข้ม",
             img: "../image/product/bagAndShoes/bagDeepPurple.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 29,
             name: "กระเป๋ามือสองโทนเขียว",
             img: "../image/product/bagAndShoes/bagGreen.jpg",
             price: 350,
+            qty: 10,
         },
         {
             id: 30,
             name: "กระเป๋ามือสองโทนม่วงอ่อน",
             img: "../image/product/bagAndShoes/bagSoftPurple.jpg",
             price: 350,
+            qty: 10,
         },
         {
             id: 31,
             name: "กระเป๋ามือสองลายผีเสื้อ",
             img: "../image/product/bagAndShoes/bagButterfly.jpg",
             price: 350,
+            qty: 10,
         },
         {
             id: 31,
             name: "กระเป๋ามือสองทูโทน",
             img: "../image/product/bagAndShoes/bagTwoTone.jpg",
             price: 350,
+            qty: 10,
         },
     ],
     pen: [
@@ -207,30 +239,35 @@ const productMaster = {
             name: "ดินสอ 2B",
             img: "../image/product/stationery/2bPencil.jpg",
             price: 5,
+            qty: 10,
         },
         {
             id: 33,
             name: "ยางลบ",
             img: "../image/product/stationery/eraser.jpg",
             price: 5,
+            qty: 10,
         },
         {
             id: 34,
             name: "ปากกาหลากสี",
             img: "../image/product/stationery/pen.jpg",
             price: 5,
+            qty: 10,
         },
         {
             id: 35,
             name: "คัดเตอร์",
             img: "../image/product/stationery/cutter.jpg",
             price: 20,
+            qty: 10,
         },
         {
             id: 36,
             name: "สมุดจดบันทึก",
             img: "../image/product/stationery/notebook.jpg",
             price: 30,
+            qty: 10,
         },
     ],
 }
@@ -256,6 +293,13 @@ var netAmount = 0
 
 function addCart(id) {
     const thisProd = productMap.get(id)
+    if(thisProd.qty <= 0) {
+        Swal.fire({
+            icon: "warning",
+            title: "สินค้าไม่พอจำหน่าย"
+        })
+        return false;
+    }
     var pass = false
     for (let i = 0; i < myCart.length; i++) {
         const element = myCart[i]
@@ -307,3 +351,8 @@ function renderCart() {
     $("#renderCart").html(html)
 }
 renderCart()
+
+
+if(!localStorage.token) {
+    window.location.href = "../login.html"
+}

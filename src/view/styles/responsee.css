@@ -762,7 +762,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 }
 
 .margin-bottom2x {
-    margin-bottom: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .s-1,
@@ -3639,7 +3639,7 @@ nav.breadcrumb-nav ul li:last-child:after {
 .card-price {
     color: #4caf50;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .card-title h4 {
@@ -3657,4 +3657,12 @@ nav.breadcrumb-nav ul li:last-child:after {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.gridproduct {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+.outofstock {
+    filter: grayscale(100%);
 }

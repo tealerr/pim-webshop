@@ -26,6 +26,32 @@
             font-size: .8rem;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    .slick-dots {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      list-style: none;
+      margin-top: 20px;
+    }
+    .slick-dots li {
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .slick-dots li.slick-active button {
+      background: #28a745;
+      color: #fff;
+    }
+    .slick-dots li button {
+      width: 30px;
+      cursor: pointer;
+      height: 30px;
+      border-radius: 50%;
+      border: none;
+    }
+  </style>
 
 </head>
 
@@ -61,16 +87,21 @@
                         </ul>
                     </div>
                 </aside>
+                
                 <!-- CONTENT -->
                 <section class="s-12 m-8 l-9 xl-10">
-            
+                    <div class="single-item">
+                        <img src="../image/indexnew1.png" style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
+                        <img src="../image/indexnew2.png" style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
+                        <img src="../image/indexnew3.png" style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
+                      </div>
                     <nav class="breadcrumb-nav">
                         <ul>
                             <li><a href="smart.html">หมวดหมู่สินค้า</a></li>
                         </ul>
                     </nav>
                     <h1 class="margin-bottom">Products</h1>
-                    <div id="render" class="margin2x row">
+                    <div id="render" class="margin2x gridproduct">
 
                     </div>
             </div>
@@ -113,6 +144,15 @@
 
 
         $(document).ready(() => {
+            $('.single-item').slick({
+              dots: true,
+              infinite: true,
+              speed: 500,
+              autoplaySpeed: 2000,
+              autoplay: true,
+              prevArrow: false,
+              nextArrow: false
+            });
             if(!searchx) {
                 searchx = "";
             }
@@ -124,19 +164,29 @@
             for (let i = 0; i < productMaster.electric.length; i++) {
                 const element = productMaster.electric[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    html += `
-                    <div class="s-12 m-6 l-4 xl-3 xxl-3">
+                    
+                    var outofstock = "";
+                if(element.qty <= 0) {
+                    outofstock = "outofstock";
+                }
+                html += `
+                <div class="gridproductitems ${outofstock}">
                         <div class="card">
                             <a href="">
                                 <img class="card-img" src="${element.img}" alt="${element.name}" style="width: 100%;" />
                             </a>
                             <div class="card-content">
-                                <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
                                 <a href="/" class="card-title margin-bottom">
-                                    <h4>
-                                        <strong>${element.name}</strong>
-                                    </h4>
+                                    <h5 style="margin-bottom: 0;">
+                                    <strong>${element.name}</strong>
+                                    </h5>
                                 </a>
+                                <h6 style="color: #adadad; font-size: .7rem;">
+                                    เหลืออยู่ ${element.qty} ชิ้น
+                                </h6>
+                                <h5 class="card-price">
+                                    ${numberWithCommas((element.price).toFixed(2))} บาท
+                                </h5>
                                 <p class="margin-bottom"></p>
                                 <div class="customform s-12 margin-bottom2x">
                                     <div>
@@ -154,19 +204,29 @@
             for (let i = 0; i < productMaster.cloth.length; i++) {
                 const element = productMaster.cloth[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    html += `
-                <div class="s-12 m-6 l-4 xl-3 xxl-3">
+                    
+                var outofstock = "";
+                if(element.qty <= 0) {
+                    outofstock = "outofstock";
+                }
+                html += `
+                <div class="gridproductitems ${outofstock}">
                     <div class="card">
                         <a href="">
                             <img class="card-img" src="${element.img}" alt="${element.name}" style="width: 100%;" />
                         </a>
                         <div class="card-content">
-                            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
                             <a href="/" class="card-title margin-bottom">
-                                <h4>
-                                    <strong>${element.name}</strong>
-                                </h4>
+                                <h5 style="margin-bottom: 0;">
+                                <strong>${element.name}</strong>
+                                </h5>
                             </a>
+                            <h6 style="color: #adadad; font-size: .7rem;">
+                                เหลืออยู่ ${element.qty} ชิ้น
+                            </h6>
+                            <h5 class="card-price">
+                                ${numberWithCommas((element.price).toFixed(2))} บาท
+                            </h5>
                             <p class="margin-bottom"></p>
                             <div class="customform s-12 margin-bottom2x">
                                 <div>
@@ -184,19 +244,29 @@
             for (let i = 0; i < productMaster.food.length; i++) {
                 const element = productMaster.food[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    html += `
-                <div class="s-12 m-6 l-4 xl-3 xxl-3">
+                    
+                var outofstock = "";
+                if(element.qty <= 0) {
+                    outofstock = "outofstock";
+                }
+                html += `
+                <div class="gridproductitems ${outofstock}">
                     <div class="card">
                         <a href="">
                             <img class="full-img card-img" src="${element.img}" alt="${element.name}" style="width: 100%;" />
                         </a>
                         <div class="card-content">
-                            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
                             <a href="/" class="card-title margin-bottom">
-                                <h5>
-                                    <strong>${element.name}</strong>
+                                <h5 style="margin-bottom: 0;">
+                                <strong>${element.name}</strong>
                                 </h5>
                             </a>
+                            <h6 style="color: #adadad; font-size: .7rem;">
+                                เหลืออยู่ ${element.qty} ชิ้น
+                            </h6>
+                            <h5 class="card-price">
+                                ${numberWithCommas((element.price).toFixed(2))} บาท
+                            </h5>
                             <p class="margin-bottom"></p>
                             <div class="customform s-12 margin-bottom2x">
                                 <div>
@@ -214,19 +284,29 @@
             for (let i = 0; i < productMaster.giftshop.length; i++) {
                 const element = productMaster.giftshop[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    html += `
-                <div class="s-12 m-6 l-4 xl-3 xxl-3">
+                    
+                var outofstock = "";
+                if(element.qty <= 0) {
+                    outofstock = "outofstock";
+                }
+                html += `
+                <div class="gridproductitems ${outofstock}">
                     <div class="card">
                         <a href="">
                             <img class="full-img card-img" src="${element.img}" alt="${element.name}" style="width: 100%;" />
                         </a>
                         <div class="card-content">
-                            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
                             <a href="/" class="card-title margin-bottom">
-                                <h5>
-                                    <strong>${element.name}</strong>
+                                <h5 style="margin-bottom: 0;">
+                                <strong>${element.name}</strong>
                                 </h5>
                             </a>
+                            <h6 style="color: #adadad; font-size: .7rem;">
+                                เหลืออยู่ ${element.qty} ชิ้น
+                            </h6>
+                            <h5 class="card-price">
+                                ${numberWithCommas((element.price).toFixed(2))} บาท
+                            </h5>
                             <p class="margin-bottom"></p>
                             <div class="customform s-12 margin-bottom2x">
                                 <div>
@@ -244,19 +324,29 @@
             for (let i = 0; i < productMaster.shoe.length; i++) {
                 const element = productMaster.shoe[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    html += `
-                    <div class="s-12 m-6 l-4 xl-3 xxl-3">
+                    
+                    var outofstock = "";
+                if(element.qty <= 0) {
+                    outofstock = "outofstock";
+                }
+                html += `
+                <div class="gridproductitems ${outofstock}">
                         <div class="card">
                             <a href="">
                                 <img class="full-img card-img" src="${element.img}" alt="${element.name}" style="width: 100%;" />
                             </a>
                             <div class="card-content">
-                                <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
                                 <a href="/" class="card-title margin-bottom">
-                                    <h5>
-                                        <strong>${element.name}</strong>
-                                    </h5>
-                                </a>
+                                <h5 style="margin-bottom: 0;">
+                                <strong>${element.name}</strong>
+                                </h5>
+                            </a>
+                            <h6 style="color: #adadad; font-size: .7rem;">
+                                เหลืออยู่ ${element.qty} ชิ้น
+                            </h6>
+                            <h5 class="card-price">
+                                ${numberWithCommas((element.price).toFixed(2))} บาท
+                            </h5>
                                 <p class="margin-bottom"></p>
                                 <div class="customform s-12 margin-bottom2x">
                                     <div>
@@ -274,19 +364,29 @@
             for (let i = 0; i < productMaster.pen.length; i++) {
                 const element = productMaster.pen[i];
                 if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    html += `
-                    <div class="s-12 m-6 l-4 xl-3 xxl-3">
+                    
+                    var outofstock = "";
+                if(element.qty <= 0) {
+                    outofstock = "outofstock";
+                }
+                html += `
+                <div class="gridproductitems ${outofstock}">
                         <div class="card">
                             <a href="">
                                 <img class="full-img card-img" src="${element.img}" alt="${element.name}" style="width: 100%;" />
                             </a>
                             <div class="card-content">
-                                <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
                                 <a href="/" class="card-title margin-bottom">
-                                    <h5>
-                                        <strong>${element.name}</strong>
-                                    </h5>
-                                </a>
+                                <h5 style="margin-bottom: 0;">
+                                <strong>${element.name}</strong>
+                                </h5>
+                            </a>
+                            <h6 style="color: #adadad; font-size: .7rem;">
+                                เหลืออยู่ ${element.qty} ชิ้น
+                            </h6>
+                            <h5 class="card-price">
+                                ${numberWithCommas((element.price).toFixed(2))} บาท
+                            </h5>
                                 <p class="margin-bottom"></p>
                                 <div class="customform s-12 margin-bottom2x">
                                     <div>
@@ -307,6 +407,10 @@
                         </div>`
             }
             $("#render").html(html)
+        }
+
+        if(!localStorage.token) {
+          window.location.href = "./login.html";
         }
     </script>
 </body>

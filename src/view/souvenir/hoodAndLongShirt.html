@@ -59,7 +59,7 @@
                     </nav>
                     <h1 class="margin-bottom">รายการสินค้า</h1>
                     <!-- Pruducts -->
-                    <div id="render" class="margin2x">
+                    <div id="render" class="margin2x gridproduct">
                         
                     </div>
             </div>
@@ -91,19 +91,29 @@
             var html = "";
             for (let i = 0; i < productMaster.hood.length; i++) {
                 const element = productMaster.hood[i];
+                
+                var outofstock = "";
+                if(element.qty <= 0) {
+                    outofstock = "outofstock";
+                }
                 html += `
-                <div class="s-12 m-6 l-4 xl-3 xxl-3">
+                <div class="gridproductitems ${outofstock}">
     <div class="card">
         <a href="#">
             <img class="card-img" src="${element.img}" alt="${element.name}" />
         </a>
         <div class="card-content">
-            <h5 class="card-price">${numberWithCommas((element.price).toFixed(2))} บาท</h5>
-            <a href="#" class="card-title">
-                <h4>
-                    <strong>${element.name}</strong>
-                </h4>
+            <a href="/" class="card-title margin-bottom">
+                <h5 style="margin-bottom: 0;">
+                <strong>${element.name}</strong>
+                </h5>
             </a>
+            <h6 style="color: #adadad; font-size: .7rem;">
+                เหลืออยู่ ${element.qty} ชิ้น
+            </h6>
+            <h5 class="card-price">
+                ${numberWithCommas((element.price).toFixed(2))} บาท
+            </h5>
             <div class="customform s-12 margin-bottom2x" style="margin-top:10px;">
                 <button onclick="addCart(${element.id})" class="button rounded-btn submit-btn s-12">
                     Add to Cart
@@ -115,6 +125,10 @@
 `;
             }
             $("#render").html(html)
+        }
+
+        if(!localStorage.token) {
+          window.location.href = "./login.html";
         }
     </script>
 </body>

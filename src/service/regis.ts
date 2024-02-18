@@ -4,6 +4,9 @@ import { Register } from "../models/register.model"
 // Registration function
 export async function register(req: Request, res: Response) {
     const { username, email, password } = req.body
+    console.log("username", username)
+    console.log("email", email)
+    console.log("password", password)
 
     // Password complexity rules
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#_A-a]).{8,}$/
@@ -19,7 +22,7 @@ export async function register(req: Request, res: Response) {
 
     try {
         await newRegister.save()
-        res.json({ message: "Registration successful" })
+        res.status(200).json({ message: "Registration successful" })
     } catch (error: any) {
         console.error("Error registering user:", error)
         if (error.code === 11000) {

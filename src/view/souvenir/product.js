@@ -7,6 +7,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบการบิน/เข็มการบิน.jpg",
                 img2: "../../image/souvenir/เครื่องแบบการบิน/เข็มการบิน.jpg",
                 price: 70,
+                qty: 5,
             },
             {
                 id: 2,
@@ -14,6 +15,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบการบิน/เน็กไท.jpg",
                 img2: "../../image/souvenir/เครื่องแบบการบิน/เน็กไท.jpg",
                 price: 110,
+                qty: 2,
             },
             {
                 id: 3,
@@ -21,6 +23,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบการบิน/ป้ายสาขา.jpg",
                 img2: "../../image/souvenir/เครื่องแบบการบิน/ป้ายสาขา.jpg",
                 price: 115,
+                qty: 0,
             },
             {
                 id: 4,
@@ -28,6 +31,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบการบิน/เข็มขัด.jpg",
                 img2: "../../image/souvenir/เครื่องแบบการบิน/เข็มขัด.jpg",
                 price: 120,
+                qty: 10,
             },
             {
                 id: 5,
@@ -35,6 +39,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบการบิน/อินธนู.jpg",
                 img2: "../../image/souvenir/เครื่องแบบการบิน/อินธนู.jpg",
                 price: 175,
+                qty: 10,
             },
             {
                 id: 6,
@@ -42,6 +47,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบการบิน/ปีกการบิน.jpg",
                 img2: "../../image/souvenir/เครื่องแบบการบิน/ปีกการบิน.jpg",
                 price: 145,
+                qty: 10,
             },
         ],
         man: [
@@ -51,6 +57,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบนักศึกษาชาย/men.jpg",
                 img2: "../../image/souvenir/เครื่องแบบนักศึกษาชาย/men.jpg",
                 price: 110,
+                qty: 10,
             },
             {
                 id: 6,
@@ -58,6 +65,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบนักศึกษาชาย/necktie.jpg",
                 img2: "../../image/souvenir/เครื่องแบบนักศึกษาชาย/necktie.jpg",
                 price: 110,
+                qty: 10,
             },
             {
                 id: 7,
@@ -65,6 +73,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบนักศึกษาชาย/belt.jpg",
                 img2: "../../image/souvenir/เครื่องแบบนักศึกษาชาย/belt.jpg",
                 price: 120,
+                qty: 10,
             },
         ],
         women: [
@@ -74,6 +83,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบนักศึกษาหญิง/กระดุม.jpg",
                 img2: "../../image/souvenir/เครื่องแบบนักศึกษาหญิง/กระดุม.jpg",
                 price: 50,
+                qty: 10,
             },
             {
                 id: 9,
@@ -81,6 +91,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบนักศึกษาหญิง/ตุ้งติ้ง.jpg",
                 img2: "../../image/souvenir/เครื่องแบบนักศึกษาหญิง/ตุ้งติ้ง.jpg",
                 price: 55,
+                qty: 10,
             },
             {
                 id: 10,
@@ -88,6 +99,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบนักศึกษาหญิง/เข็มกลัด.jpg",
                 img2: "../../image/souvenir/เครื่องแบบนักศึกษาหญิง/เข็มกลัด.jpg",
                 price: 55,
+                qty: 10,
             },
             {
                 id: 11,
@@ -95,6 +107,7 @@ const productMaster = {
                 img: "../image/souvenir/เครื่องแบบนักศึกษาชาย/belt.jpg",
                 img2: "../../image/souvenir/เครื่องแบบนักศึกษาชาย/belt.jpg",
                 price: 120,
+                qty: 10,
             },
         ],
     },
@@ -104,72 +117,84 @@ const productMaster = {
             name: "เสื้อยืดดำ",
             img: "../image/product/poloAndtshirt/blackTshirt.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 13,
             name: "เสื้อยืดเหลือง",
             img: "../image/product/poloAndtshirt/yellowTshirt.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 14,
             name: "เสื้อยืดฟ้า",
             img: "../image/product/poloAndtshirt/bluePolo.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 15,
             name: "เสื้อยืดขาว",
             img: "../image/product/poloAndtshirt/whitePolo.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 16,
             name: "เสื้อยืดเทา",
             img: "../image/product/poloAndtshirt/greyTshirt.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 17,
             name: "เสื้อโปโลดำ",
             img: "../image/product/poloAndtshirt/blackPolo.jpg",
             price: 390,
+            qty: 10,
         },
         {
             id: 18,
             name: "เสื้อโปโลเหลือง",
             img: "../image/product/poloAndtshirt/YellowPolo.jpg",
             price: 390,
+            qty: 10,
         },
         {
             id: 19,
             name: "เสื้อโปโลขาว",
             img: "../image/product/poloAndtshirt/whitePolo.jpg",
             price: 390,
+            qty: 10,
         },
         {
             id: 20,
             name: "เสื้อโปโลกรม",
             img: "../image/product/poloAndtshirt/3Polo.jpg",
             price: 390,
+            qty: 10,
         },
         {
             id: 20,
             name: "เสื้อโปโลกรม",
             img: "../image/product/poloAndtshirt/3Polo.jpg",
             price: 390,
+            qty: 10,
         },
         {
             id: 20,
             name: "เสื้อโปโลกรม",
             img: "../image/product/poloAndtshirt/3Polo.jpg",
             price: 390,
+            qty: 10,
         },
         {
             id: 20,
             name: "เสื้อโปโลกรม",
             img: "../image/product/poloAndtshirt/3Polo.jpg",
             price: 390,
+            qty: 10,
         },
     ],
     hood: [
@@ -178,30 +203,35 @@ const productMaster = {
             name: "เสื้อยืดแขนยาวดำ",
             img: "../image/product/jacket/blackTshirt.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 22,
             name: "เสื้อยืดแขนยาวเทา",
             img: "../image/product/jacket/greyTshirt.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 23,
             name: "เสื้อฮู้ดกรม",
             img: "../image/product/jacket/hood.jpg",
             price: 590,
+            qty: 10,
         },
         {
             id: 24,
             name: "เสื้อฮู้ดดำ",
             img: "../image/product/jacket/blackJacket.jpg",
             price: 590,
+            qty: 10,
         },
         {
             id: 25,
             name: "เสื้อฮู้ดน้ำตาลแขนสีไข่",
             img: "../image/product/jacket/jacket.jpg",
             price: 590,
+            qty: 10,
         },
     ],
     giftshop: [
@@ -210,48 +240,56 @@ const productMaster = {
             name: "ซองใส่บัตรพร้อมสาย",
             img: "../image/product/giftBasket/cardHolder.jpg",
             price: 50,
+            qty: 10,
         },
         {
             id: 27,
             name: "เเมส",
             img: "../image/product/giftBasket/mask.jpg",
             price: 99,
+            qty: 10,
         },
         {
             id: 28,
             name: "กระเป๋าถัก",
             img: "../image/product/giftBasket/bag.jpg",
             price: 150,
+            qty: 10,
         },
         {
             id: 29,
             name: "หมวกเเก๊ป",
             img: "../image/product/giftBasket/cap.jpg",
             price: 250,
+            qty: 10,
         },
         {
             id: 30,
             name: "เซ็ตน้อมหมีOnly",
             img: "../image/product/giftBasket/bear.jpg",
             price: 290,
+            qty: 10,
         },
         {
             id: 31,
             name: "เซ็ตเสื้อพร้อมสมุดปากกา",
             img: "../image/product/giftBasket/bookAndPen.jpg",
             price: 590,
+            qty: 10,
         },
         {
             id: 32,
             name: "เซ็ตน้องหมีชมพู",
             img: "../image/product/giftBasket/pinkBear.jpg",
             price: 790,
+            qty: 10,
         },
         {
             id: 33,
             name: "เซ็ตน้องหมีHappy",
             img: "../image/product/giftBasket/happyBear.jpg",
             price: 890,
+            qty: 10,
         },
     ],
 }
@@ -288,16 +326,25 @@ var myCart = []
 var netAmount = 0
 function addCart(id) {
     const thisProd = productMap.get(id)
+    if(thisProd.qty <= 0) {
+        Swal.fire({
+            icon: "warning",
+            title: "สินค้าไม่พอจำหน่าย"
+        })
+        return false;
+    }
     var pass = false
     for (let i = 0; i < myCart.length; i++) {
         const element = myCart[i]
         if (element.id == thisProd.id) {
-            pass = true
-            element.count++
-            element.netAmount = element.amount * element.count
-            break
+            
+                pass = true
+                element.count++
+                element.netAmount = element.amount * element.count
+                break;
         }
     }
+
 
     if (!pass) {
         myCart.push({
@@ -317,6 +364,9 @@ function addCart(id) {
     console.log(myCart)
     renderCart()
     localStorage.setItem("myCart2", JSON.stringify(myCart))
+    
+
+    
 }
 
 function renderCart() {
@@ -339,3 +389,5 @@ function renderCart() {
     $("#renderCart").html(html)
 }
 renderCart()
+
+

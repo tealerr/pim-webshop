@@ -58,7 +58,7 @@
             </div>
         </nav>
 
-        <div class="image-poster">
+        <!-- <div class="image-poster">
             <img
                 class="image-poster img-regis-1"
                 src="image/regis_1.png"
@@ -69,34 +69,39 @@
                 src="image/regis_2.png"
                 alt=""
             />
-        </div>
-        <form id="registrationForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required />
-            <br />
-            <br />
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" required />
-            <br />
-            <br />
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" required />
-            <br />
-            <br />
-
-            <div style="text-align: center">
-                <button
-                    type="submit"
-                    class="btn btn-success w-100"
-                    id="registerButton"
-                    onclick="registerUser()"
-                >
-                    SIGN UP
-                </button>
+        </div> -->
+        <div class="container">
+            <div class="d-flex justify-content-between-align-items-center">
+                <img class="mt-4" src="image/indexnew2.png" style="width: 40vw; object-fit: contain;" />
+                <form id="registrationForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required />
+                    <br />
+                    <br />
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required />
+                    <br />
+                    <br />
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required />
+                    <br />
+                    <br />
+        
+                    <div style="text-align: center">
+                        <button
+                            type="submit"
+                            class="btn btn-success w-100"
+                            id="registerButton"
+                            onclick="registerUser()"
+                        >
+                            SIGN UP
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
 
         <footer>
             <img id="footage_image" src="image/footage_wave.png" alt="" />
@@ -127,6 +132,7 @@
                 })
                     .then((response) => response.json())
                     .then((data) => {
+                        console.log("success", data)
                         const registrationMessage = document.getElementById(
                             "registrationMessage"
                         )
