@@ -13,16 +13,29 @@ export async function register(req: Request, res: Response) {
 
     if (!passwordRegex.test(password)) {
         return res
-            .status(400)
-            .json({ message: "Password complexity requirements not met." })
+            .status(200)
+            .json({ code:400, message: "Password complexity requirements not met." })
     }
 
     // Create new user
     const newRegister = new Register({ username, email, password })
 
     try {
-        await newRegister.save()
-        res.status(200).json({ message: "Registration successful" })
+        const existingUser = await Register.findOne({ username: username });
+        console.log("existingUser",existingUser)
+        if(existingUser) {
+            return res.status(200).json({ code:901,message: "User exist" })
+        }
+        else {
+            const existingMial = await Register.findOne({ email: email });
+            if(existingMial) {
+                return res.status(200).json({ code:902,message: "User exist" })
+            }
+            else {
+                await newRegister.save()
+                return res.status(200).json({ code:200,message: "Registration successful" })
+            }
+        }
     } catch (error: any) {
         console.error("Error registering user:", error)
         if (error.code === 11000) {
@@ -37,9 +50,9 @@ export async function register(req: Request, res: Response) {
             } else {
                 errorMessage = "Registration failed."
             }
-            return res.status(400).json({ message: errorMessage })
+            return res.status(200).json({ code:400, message: errorMessage })
         } else {
-            return res.status(500).json({ message: "Registration failed." })
+            return res.status(200).json({ code: 500, message: "Registration failed." })
         }
     }
 }
