@@ -29,6 +29,11 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"
         ></script>
+        <style>
+            .red-text {
+                color: red;
+            }
+        </style>
     </head>
 
     <body>
@@ -93,7 +98,7 @@
                     src="image/indexnew2.png"
                     style="width: 40vw; object-fit: contain"
                 />
-                <form id="registrationForm">
+                <div id="registrationForm">
                     <label for="username">Username:</label>
                     <input type="text" id="username" required value="bearbug" />
                     <br />
@@ -119,7 +124,7 @@
                             SIGN UP
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
 
@@ -163,21 +168,40 @@
                 axios.request(config)
                 .then((response) => {
                     console.log("success", response.data)
-                    // const registrationMessage = document.getElementById(
-                    //     "registrationMessage"
-                    // )
+                    const registrationMessage = document.getElementById(
+                        "registrationMessage"
+                    )
 
-                    // if (response.data.code == 200) {
-                    //     registrationMessage.innerText =
-                    //         "Registration successful!"
-                    //     registrationMessage.classList.remove("green-text")
-                    //     registrationMessage.classList.add("yellow-text")
-                    // } else {
-                    //     registrationMessage.innerText =
-                    //         "Registration failed."
-                    //     registrationMessage.classList.remove("yellow-text")
-                    //     registrationMessage.classList.add("green-text")
-                    // }
+                    if (response.data.code == 200) {
+                        alert("Registration successful!")
+                        registrationMessage.innerText =
+                            "Registration successful!"
+                        registrationMessage.style.color = "green"
+                        // registrationMessage.classList.add("yellow-text")
+                            window.location.href = "./login.html"
+                    }
+                    else if(response.data.code == 901) {
+                        alert("Username exist already")
+                        registrationMessage.innerText =
+                            "Username exist already"
+                        registrationMessage.style.color = "red"
+                        // registrationMessage.classList.add("red-text")
+                    } 
+                    else if(response.data.code == 902) {
+                        alert("Email exist already")
+                        registrationMessage.innerText =
+                            "Email exist already"
+                            registrationMessage.style.color = "red"
+                        // registrationMessage.classList.remove("yellow-text")
+                        // registrationMessage.classList.add("red-text")
+                    } 
+                    else {
+                        registrationMessage.innerText =
+                            "Registration failed."
+                            registrationMessage.style.color = "red"
+                        // registrationMessage.classList.remove("yellow-text")
+                        // registrationMessage.classList.add("green-text")
+                    }
                 })
                 .catch((error) => {
                 console.log(error);
