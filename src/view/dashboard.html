@@ -41,7 +41,7 @@
                 async function fetchDataFromMongoDB() {
                     try {
                         const response = await fetch(
-                            "http://localhost:4000/api/customer-info"
+                            "https://api-pimshop.airprofood.com/api/customer-info"
                         )
                         const data = await response.json()
 
@@ -130,7 +130,7 @@
                 async function fetchPageData(pageNumber) {
                     try {
                         const response = await fetch(
-                            `http://localhost:4000/api/customer-info?page=${pageNumber}`
+                            `https://api-pimshop.airprofood.com/api/customer-info?page=${pageNumber}`
                         )
                         const data = await response.json()
 
