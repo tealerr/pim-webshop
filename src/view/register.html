@@ -132,7 +132,7 @@
             <img id="footage_image" src="image/footage_wave.png" alt="" />
         </footer>
 
-        <p id="registrationMessage"></p>
+        <!-- <p id="registrationMessage"></p> -->
 
         <script>
             var baseURL = "https://api-pimshop.airprofood.com"
@@ -167,37 +167,38 @@
                 axios.request(config)
                 .then((response) => {
                     console.log("success", response.data)
-                    const registrationMessage = document.getElementById(
-                        "registrationMessage"
-                    )
+                    // const registrationMessage = document.getElementById(
+                    //     "registrationMessage"
+                    // )
 
                     if (response.data.code == 200) {
                         alert("Registration successful!")
-                        registrationMessage.innerText =
-                            "Registration successful!"
-                        registrationMessage.style.color = "green"
+                        // registrationMessage.innerText =
+                        //     "Registration successful!"
+                        // registrationMessage.style.color = "green"
                         // registrationMessage.classList.add("yellow-text")
                             window.location.href = "./login.html"
                     }
                     else if(response.data.code == 901) {
                         alert("Username exist already")
-                        registrationMessage.innerText =
-                            "Username exist already"
-                        registrationMessage.style.color = "red"
+                        // registrationMessage.innerText =
+                        //     "Username exist already"
+                        // registrationMessage.style.color = "red"
                         // registrationMessage.classList.add("red-text")
                     } 
                     else if(response.data.code == 902) {
                         alert("Email exist already")
-                        registrationMessage.innerText =
-                            "Email exist already"
-                            registrationMessage.style.color = "red"
+                        // registrationMessage.innerText =
+                        //     "Email exist already"
+                        //     registrationMessage.style.color = "red"
                         // registrationMessage.classList.remove("yellow-text")
                         // registrationMessage.classList.add("red-text")
                     } 
                     else {
-                        registrationMessage.innerText =
-                            "Registration failed."
-                            registrationMessage.style.color = "red"
+                        alert("Something is went wrong !")
+                        // registrationMessage.innerText =
+                        //     "Registration failed."
+                        //     registrationMessage.style.color = "red"
                         // registrationMessage.classList.remove("yellow-text")
                         // registrationMessage.classList.add("green-text")
                     }
