@@ -27,17 +27,17 @@ const sendMailFunction = async (reqBody: MailRequest): Promise<string> => {
         </body>
         </html>
         `
-        const dataFilePath = "data.yml"
+        // const dataFilePath = "data.yml"
 
-        const data: Record<string, any> = yaml.load(
-            fs.readFileSync(dataFilePath, "utf8")
-        ) as Record<string, any>
+        // const data: Record<string, any> = yaml.load(
+        //     fs.readFileSync(dataFilePath, "utf8")
+        // ) as Record<string, any>
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: data.username,
-                pass: data.password,
+                user: "forwebpim@gmail.com",
+                pass: "rrzb vnaw vxwa euny",
             },
         })
 
