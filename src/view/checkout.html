@@ -161,6 +161,12 @@
                             />
                             ใช้ที่อยู่เดียวกันกับการจัดส่งใบเสร็จ
                         </label>
+                        <p style="color: red; font-size: xx-small">
+                            หมายเหตุ: PIM Souvenir ไม่มีลดหย่อนภาษี <br />
+                            PIM Smart มี 2 สินค้า สินค้าบริจาคลดหย่อนภาษี 2 %
+                            <br />
+                            สินค้าฝากขายลดหย่อนภาษี 1 %
+                        </p>
                     </form>
                 </div>
             </div>
@@ -467,6 +473,7 @@
                 $("#city").removeClass("is-invalid")
                 $("#state").removeClass("is-invalid")
                 $("#zip").removeClass("is-invalid")
+                $("#phoneNumber").removeClass("is-invalid")
 
                 let isValid = true
 
@@ -571,6 +578,7 @@
             function createOrder() {
                 const email = document.getElementById("email").value
                 const name = document.getElementById("name").value
+                const phoneNumber = document.getElementById("phoneNumber").value
                 const address = document.getElementById("adr").value
                 const city = document.getElementById("city").value
                 const state = document.getElementById("state").value
@@ -579,6 +587,7 @@
                 const customerInfo = {
                     email: email,
                     name: name,
+                    phoneNumber: phoneNumber,
                     address: address,
                     city: city,
                     state: state,
@@ -607,7 +616,7 @@
                     })
                     .catch((error) => {
                         console.error("Error:", error)
-                        alert("Error occurred while creating order!")
+                        console.log("Error occurred while creating order!")
                     })
             }
 
