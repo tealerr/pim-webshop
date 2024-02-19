@@ -27,7 +27,7 @@ const sendMailFunction = async (reqBody: MailRequest): Promise<string> => {
         </body>
         </html>
         `
-        const dataFilePath = "/Users/teeramate.kan/pim-webshop/data.yml"
+        const dataFilePath = "data.yml"
 
         const data: Record<string, any> = yaml.load(
             fs.readFileSync(dataFilePath, "utf8")
