@@ -563,7 +563,6 @@
                     })
                     sendEmail()
                     createOrder()
-                    checkout()
                     isValid = false
                 }
 
@@ -583,6 +582,7 @@
                 const city = document.getElementById("city").value
                 const state = document.getElementById("state").value
                 const zip = document.getElementById("zip").value
+                const image = document.getElementById("myFile").value
 
                 const customerInfo = {
                     email: email,
@@ -592,6 +592,7 @@
                     city: city,
                     state: state,
                     zip: zip,
+                    image: image,
                 }
 
                 console.log(customerInfo)
