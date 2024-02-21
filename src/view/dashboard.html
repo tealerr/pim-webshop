@@ -59,9 +59,7 @@
                     const data = response.detail // Access the detail property of the response
                     const tableBody = document.getElementById("data-table-body")
 
-                    tableBody.innerHTML = "" // Clear previous data
-
-                    data.forEach((item) => {
+                    data.reverse().forEach((item) => {
                         const newRow = document.createElement("tr")
 
                         // Create and append cells for each data field
@@ -99,7 +97,7 @@
                         newRow.appendChild(imageCell)
 
                         // Append the row to the table
-                        tableBody.appendChild(newRow)
+                        tableBody.insertBefore(newRow, tableBody.firstChild)
                     })
                 }
 

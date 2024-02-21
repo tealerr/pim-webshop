@@ -14,13 +14,15 @@ import path from "path"
 import * as customerInfo from "../service/customerInfo"
 
 const app = express()
-app.use(cors({
-    origin: '*',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  optionsSuccessStatus: 204,
-  credentials: true,
-  allowedHeaders: 'Content-Type, Authorization',
-}))
+app.use(
+    cors({
+        origin: "*",
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        optionsSuccessStatus: 204,
+        credentials: true,
+        allowedHeaders: "Content-Type, Authorization",
+    })
+)
 
 app.use(bodyParser.json())
 app.use(express.static("public"))
@@ -72,7 +74,7 @@ const startServer = async () => {
         })
 
         app.post("/register", register)
-        
+
         app.post("/login", login)
 
         app.get("/health", (req, res) => {

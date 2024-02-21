@@ -326,25 +326,23 @@ var myCart = []
 var netAmount = 0
 function addCart(id) {
     const thisProd = productMap.get(id)
-    if(thisProd.qty <= 0) {
+    if (thisProd.qty <= 0) {
         Swal.fire({
             icon: "warning",
-            title: "สินค้าไม่พอจำหน่าย"
+            title: "สินค้าไม่พอจำหน่าย",
         })
-        return false;
+        return false
     }
     var pass = false
     for (let i = 0; i < myCart.length; i++) {
         const element = myCart[i]
         if (element.id == thisProd.id) {
-            
-                pass = true
-                element.count++
-                element.netAmount = element.amount * element.count
-                break;
+            pass = true
+            element.count++
+            element.netAmount = element.amount * element.count
+            break
         }
     }
-
 
     if (!pass) {
         myCart.push({
@@ -364,9 +362,6 @@ function addCart(id) {
     console.log(myCart)
     renderCart()
     localStorage.setItem("myCart2", JSON.stringify(myCart))
-    
-
-    
 }
 
 function renderCart() {
@@ -389,5 +384,3 @@ function renderCart() {
     $("#renderCart").html(html)
 }
 renderCart()
-
-

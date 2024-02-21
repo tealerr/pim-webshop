@@ -293,12 +293,12 @@ var netAmount = 0
 
 function addCart(id) {
     const thisProd = productMap.get(id)
-    if(thisProd.qty <= 0) {
+    if (thisProd.qty <= 0) {
         Swal.fire({
             icon: "warning",
-            title: "สินค้าไม่พอจำหน่าย"
+            title: "สินค้าไม่พอจำหน่าย",
         })
-        return false;
+        return false
     }
     var pass = false
     for (let i = 0; i < myCart.length; i++) {
@@ -352,7 +352,6 @@ function renderCart() {
 }
 renderCart()
 
-
-if(!localStorage.token) {
+if (!localStorage.token) {
     window.location.href = "../login.html"
 }
