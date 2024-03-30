@@ -1,6 +1,63 @@
 import { Request, Response } from "express"
 import Product from "../models/product.model"
 
+const updateProductName = async (
+    existingProduct: any,
+    name: string,
+    res: Response
+) => {
+    existingProduct.name = name
+    await existingProduct.save()
+
+    return res.status(200).json({
+        message: "Product name updated successfully!",
+        product: {
+            productId: existingProduct.productId,
+            name: existingProduct.name,
+            count: existingProduct.count,
+            price: existingProduct.price,
+        },
+    })
+}
+
+const updateProductPrice = async (
+    existingProduct: any,
+    price: number,
+    res: Response
+) => {
+    existingProduct.price = price
+    await existingProduct.save()
+
+    return res.status(200).json({
+        message: "Product price updated successfully!",
+        product: {
+            productId: existingProduct.productId,
+            name: existingProduct.name,
+            count: existingProduct.count,
+            price: existingProduct.price,
+        },
+    })
+}
+
+const updateProductCount = async (
+    existingProduct: any,
+    count: number,
+    res: Response
+) => {
+    existingProduct.count = count
+    await existingProduct.save()
+
+    return res.status(200).json({
+        message: "Product count updated successfully!",
+        product: {
+            productId: existingProduct.productId,
+            name: existingProduct.name,
+            count: existingProduct.count,
+            price: existingProduct.price,
+        },
+    })
+}
+
 export const addProduct = async (req: Request, res: Response) => {
     try {
         const { name, productId, count, price } = req.body
@@ -9,59 +66,23 @@ export const addProduct = async (req: Request, res: Response) => {
             return res.status(400).json({ error: "Missing required fields" })
         }
 
-        // Check if product with the same productId exists, update name if different
         let existingProduct = await Product.findOne({ productId })
 
         if (existingProduct) {
             if (existingProduct.name !== name) {
-                existingProduct.name = name
-                await existingProduct.save()
-
-                return res.status(200).json({
-                    message: "Product name updated successfully!",
-                    product: {
-                        productId: existingProduct.productId,
-                        name: existingProduct.name,
-                        count: existingProduct.count,
-                        price: existingProduct.price,
-                    },
-                })
+                return await updateProductName(existingProduct, name, res)
             }
 
             if (existingProduct.count === count) {
-                // If duplicate name, productId, and count, update the price
-                existingProduct.price = price
-                await existingProduct.save()
-
-                return res.status(200).json({
-                    message: "Product price updated successfully!",
-                    product: {
-                        productId: existingProduct.productId,
-                        name: existingProduct.name,
-                        count: existingProduct.count,
-                        price: existingProduct.price,
-                    },
-                })
+                return await updateProductPrice(existingProduct, price, res)
             }
         }
 
-        // Check if product with the same productId and name exists, update count if different
         existingProduct = await Product.findOne({ productId, name })
 
         if (existingProduct) {
             if (existingProduct.count !== count) {
-                existingProduct.count = count
-                await existingProduct.save()
-
-                return res.status(200).json({
-                    message: "Product count updated successfully!",
-                    product: {
-                        productId: existingProduct.productId,
-                        name: existingProduct.name,
-                        count: existingProduct.count,
-                        price: existingProduct.price,
-                    },
-                })
+                return await updateProductCount(existingProduct, count, res)
             }
 
             return res.status(200).json({
@@ -76,7 +97,6 @@ export const addProduct = async (req: Request, res: Response) => {
             })
         }
 
-        // If product doesn't exist, create a new one
         const newProduct = new Product({ name, productId, count, price })
         await newProduct.save()
 

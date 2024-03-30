@@ -12,12 +12,10 @@ export async function register(req: Request, res: Response) {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#_A-a]).{8,}$/
 
     if (!passwordRegex.test(password)) {
-        return res
-            .status(200)
-            .json({
-                code: 400,
-                message: "Password complexity requirements not met.",
-            })
+        return res.status(200).json({
+            code: 400,
+            message: "Password complexity requirements not met.",
+        })
     }
 
     // Create new user

@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext"
         rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../script/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="../script/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../script/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../script/jquery-ui.min.js"></script>
     <!-- <script defer src="script/cart.js"></script> -->
     <script src="./product.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -37,7 +37,8 @@
                         <p class="aside-nav-text">หมวดหมู่สินค้า</p>
                         <ul>
                             <li>
-                                <a href="../souvenir/uniformAccessory.html">อุปกรณ์ชุดนักศึกษา</a>                                <ul>
+                                <a href="../souvenir/uniformAccessory.html">อุปกรณ์ชุดนักศึกษา</a>
+                                <ul>
                                     <li><a href="../souvenir/accessory/aviAccesory.html">เครื่องแบบการบิน</a></li>
                                     <li><a href="../souvenir/accessory/menAccessory.html">เครื่องแบบนักศึกษาชาย</a></li>
                                     <li><a href="../souvenir/accessory/femaleAccessory.html">เครื่องแบบนักศึกษาหญิง</a>
@@ -69,7 +70,7 @@
                     <h1 class="margin-bottom">รายการสินค้า</h1>
                     <!-- Pruducts -->
                     <div id="render" class="margin2x gridproduct">
-                     
+
                     </div>
             </div>
             </section>
@@ -100,9 +101,9 @@
             var html = "";
             for (let i = 0; i < productMaster.shirt.length; i++) {
                 const element = productMaster.shirt[i];
-                
+
                 var outofstock = "";
-                if(element.qty <= 0) {
+                if (element.qty <= 0) {
                     outofstock = "outofstock";
                 }
                 html += `
@@ -138,10 +139,10 @@
             }
             $("#render").html(html)
         }
-        
-        if(!localStorage.token) {
-          window.location.href = "https://tealerr.github.io/pim-webshop/src/view/login.html";
-        }
+
+        // if(!localStorage.token) {
+        //   window.location.href = "https://tealerr.github.io/pim-webshop/src/view/login.html";
+        // }
     </script>
 </body>
 

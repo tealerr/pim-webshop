@@ -26,32 +26,35 @@
             font-size: .8rem;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <style>
-    .slick-dots {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      list-style: none;
-      margin-top: 20px;
-    }
-    .slick-dots li {
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    .slick-dots li.slick-active button {
-      background: #28a745;
-      color: #fff;
-    }
-    .slick-dots li button {
-      width: 30px;
-      cursor: pointer;
-      height: 30px;
-      border-radius: 50%;
-      border: none;
-    }
-  </style>
+    <style>
+        .slick-dots {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .slick-dots li {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .slick-dots li.slick-active button {
+            background: #28a745;
+            color: #fff;
+        }
+
+        .slick-dots li button {
+            width: 30px;
+            cursor: pointer;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+        }
+    </style>
 
 </head>
 
@@ -87,14 +90,17 @@
                         </ul>
                     </div>
                 </aside>
-                
+
                 <!-- CONTENT -->
                 <section class="s-12 m-8 l-9 xl-10">
                     <div class="single-item">
-                        <img src="../image/indexnew1.png" style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
-                        <img src="../image/indexnew2.png" style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
-                        <img src="../image/indexnew3.png" style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
-                      </div>
+                        <img src="../image/indexnew1.png"
+                            style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
+                        <img src="../image/indexnew2.png"
+                            style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
+                        <img src="../image/indexnew3.png"
+                            style="width: 1000px; height: 300px; border-radius: 10px; object-fit: cover; overflow: hidden;">
+                    </div>
                     <nav class="breadcrumb-nav">
                         <ul>
                             <li><a href="smart.html">หมวดหมู่สินค้า</a></li>
@@ -145,15 +151,15 @@
 
         $(document).ready(() => {
             $('.single-item').slick({
-              dots: true,
-              infinite: true,
-              speed: 500,
-              autoplaySpeed: 2000,
-              autoplay: true,
-              prevArrow: false,
-              nextArrow: false
+                dots: true,
+                infinite: true,
+                speed: 500,
+                autoplaySpeed: 2000,
+                autoplay: true,
+                prevArrow: false,
+                nextArrow: false
             });
-            if(!searchx) {
+            if (!searchx) {
                 searchx = "";
             }
             render();
@@ -163,13 +169,14 @@
             var html = "";
             for (let i = 0; i < productMaster.electric.length; i++) {
                 const element = productMaster.electric[i];
-                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    
+                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '')
+                        .toLowerCase())) {
+
                     var outofstock = "";
-                if(element.qty <= 0) {
-                    outofstock = "outofstock";
-                }
-                html += `
+                    if (element.qty <= 0) {
+                        outofstock = "outofstock";
+                    }
+                    html += `
                 <div class="gridproductitems ${outofstock}">
                         <div class="card">
                             <a href="">
@@ -203,13 +210,14 @@
             }
             for (let i = 0; i < productMaster.cloth.length; i++) {
                 const element = productMaster.cloth[i];
-                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    
-                var outofstock = "";
-                if(element.qty <= 0) {
-                    outofstock = "outofstock";
-                }
-                html += `
+                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '')
+                        .toLowerCase())) {
+
+                    var outofstock = "";
+                    if (element.qty <= 0) {
+                        outofstock = "outofstock";
+                    }
+                    html += `
                 <div class="gridproductitems ${outofstock}">
                     <div class="card">
                         <a href="">
@@ -243,13 +251,14 @@
             }
             for (let i = 0; i < productMaster.food.length; i++) {
                 const element = productMaster.food[i];
-                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    
-                var outofstock = "";
-                if(element.qty <= 0) {
-                    outofstock = "outofstock";
-                }
-                html += `
+                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '')
+                        .toLowerCase())) {
+
+                    var outofstock = "";
+                    if (element.qty <= 0) {
+                        outofstock = "outofstock";
+                    }
+                    html += `
                 <div class="gridproductitems ${outofstock}">
                     <div class="card">
                         <a href="">
@@ -283,13 +292,14 @@
             }
             for (let i = 0; i < productMaster.giftshop.length; i++) {
                 const element = productMaster.giftshop[i];
-                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    
-                var outofstock = "";
-                if(element.qty <= 0) {
-                    outofstock = "outofstock";
-                }
-                html += `
+                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '')
+                        .toLowerCase())) {
+
+                    var outofstock = "";
+                    if (element.qty <= 0) {
+                        outofstock = "outofstock";
+                    }
+                    html += `
                 <div class="gridproductitems ${outofstock}">
                     <div class="card">
                         <a href="">
@@ -323,13 +333,14 @@
             }
             for (let i = 0; i < productMaster.shoe.length; i++) {
                 const element = productMaster.shoe[i];
-                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    
+                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '')
+                        .toLowerCase())) {
+
                     var outofstock = "";
-                if(element.qty <= 0) {
-                    outofstock = "outofstock";
-                }
-                html += `
+                    if (element.qty <= 0) {
+                        outofstock = "outofstock";
+                    }
+                    html += `
                 <div class="gridproductitems ${outofstock}">
                         <div class="card">
                             <a href="">
@@ -363,13 +374,14 @@
             }
             for (let i = 0; i < productMaster.pen.length; i++) {
                 const element = productMaster.pen[i];
-                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '').toLowerCase())) {
-                    
+                if (String(element.name).replace(/ /g, '').toLowerCase().includes(String(searchx).replace(/ /g, '')
+                        .toLowerCase())) {
+
                     var outofstock = "";
-                if(element.qty <= 0) {
-                    outofstock = "outofstock";
-                }
-                html += `
+                    if (element.qty <= 0) {
+                        outofstock = "outofstock";
+                    }
+                    html += `
                 <div class="gridproductitems ${outofstock}">
                         <div class="card">
                             <a href="">
@@ -407,10 +419,6 @@
                         </div>`
             }
             $("#render").html(html)
-        }
-
-        if(!localStorage.token) {
-          window.location.href = "https://tealerr.github.io/pim-webshop/src/view/login.html";
         }
     </script>
 </body>
